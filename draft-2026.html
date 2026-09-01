@@ -176,6 +176,19 @@ footer a{color:var(--muted)}
 .kick{font-size:15.5px;color:var(--grey);margin:0;line-height:1.6}
 .kick b{color:var(--ink)}
 
+
+/* ---------- board tooltip ---------- */
+.board td[data-tip]{cursor:pointer}
+.board td[data-tip]:hover,.board td.lit{outline:2px solid var(--gold);outline-offset:-2px}
+.bt{position:fixed;z-index:60;pointer-events:none;opacity:0;transform:translateY(3px);
+  transition:opacity .12s ease,transform .12s ease;
+  background:var(--raised);border:1px solid var(--gold-dim);border-radius:9px;
+  padding:10px 13px;max-width:250px;box-shadow:0 10px 28px rgba(0,0,0,.55);line-height:1.4}
+.bt.on{opacity:1;transform:translateY(0)}
+.bt .p{display:block;font-size:14px;font-weight:700;color:var(--ink)}
+.bt .m{display:block;font-family:var(--mono);font-size:11px;color:var(--gold);margin-top:4px}
+.bt .s{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
+
 @media(max-width:860px){
   .kpis{grid-template-columns:repeat(2,1fr)}
   .cards,.awards,.grades{grid-template-columns:1fr}
@@ -198,17 +211,16 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <p class="eyebrow">six rounds · seventy-two picks · one defensible decision</p>
     <h1>Draft<br>Recap<span class="g">2026</span></h1>
-    <p class="dek">Seventy-two picks. Twelve of them were kickers and defenses.</p>
+    <p class="dek">Seventy-two picks, twelve of them kickers and defenses…</p>
     <p class="dek" style="font-size:16.5px;color:var(--muted);margin-top:14px;max-width:64ch">
-      Graded against Sleeper's own board. Complaints go to Sleeper.</p>
+      Everything here is graded against Sleeper's own board, so complaints go to Sleeper.</p>
   </div>
 </div>
 
 <!-- ============ GRADES ============ -->
 <section><div class="wrap">
   <h2><span class="n">01</span>The grades</h2>
-  <p class="sub"><b>Value</b> against the board, <b>timeline</b> against your record,
-    <b>capital</b> you brought, and whether the six <b>construct</b> anything.</p>
+  <p class="sub"><b>Value</b> measures where you took him against the board, <b>timeline</b> weighs the ages against your record, <b>capital</b> counts the picks you brought, and <b>construction</b> asks whether the six add up to a roster.</p>
   <div class="grades">
 <div class="gcard hi">
 <div class="ghd"><div><div class="gname">Raj</div><div class="grec">9-5 in 2025</div></div><div class="gletter">A-</div></div>
@@ -219,7 +231,7 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:75%"></i></span></div>
 </div>
 <p>Opened trade talks forty-four seconds after the draft went live and owned the first overall pick seven minutes later. Took Jeremiyah Love with it, the top player on the board.</p>
-<p>Six rookies, average age 22.6, coming off a title. Then spent the last pick of the draft on Jaylen Wright, who he drafted in 2024 and gave up on in 2025.</p>
+<p>He drafted six rookies at an average age of 22.6 while coming off a title, then spent the last pick of the draft on Jaylen Wright, who he drafted in 2024 and gave up on in 2025.</p>
 </div>
 <div class="gcard hi">
 <div class="ghd"><div><div class="gname">Creger</div><div class="grec">11-3 in 2025</div></div><div class="gletter">B+</div></div>
@@ -230,7 +242,7 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:70%"></i></span></div>
 </div>
 <p>Sold Alvin Kamara last October for three third-round picks. Spent all three in this draft, at 28, 29 and 31. Took Kamara back at 57.</p>
-<p>Eight picks, four veterans, eleven wins.</p>
+<p>He made eight picks, four of them veterans, on a roster that won eleven games.</p>
 </div>
 <div class="gcard ">
 <div class="ghd"><div><div class="gname">Reynolds</div><div class="grec">12-2 in 2025</div></div><div class="gletter">B</div></div>
@@ -240,8 +252,8 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:45%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:72%"></i></span></div>
 </div>
-<p>Five picks, because he sold the rest again. Posted the best average value in the draft anyway. Malik Willis at 35 with the board at 14.</p>
-<p>Twelve wins on five picks.</p>
+<p>Five picks, because he sold the rest again. He still posted the best average value in the draft, taking Malik Willis at 35 when the board had him at 14.</p>
+<p>He won twelve games and drafted five times.</p>
 </div>
 <div class="gcard ">
 <div class="ghd"><div><div class="gname">Ward</div><div class="grec">3-11 in 2025</div></div><div class="gletter">B-</div></div>
@@ -251,7 +263,7 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:92%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:60%"></i></span></div>
 </div>
-<p>Bought first-rounders off Raj and Reynolds, drafted eight players, and not one of them is older than 23. Youngest class in the league at 21.8.</p>
+<p>Bought first-rounders off Raj and Reynolds, drafted eight players, and not one of them is older than 23. It is the youngest class in the league at 21.8.</p>
 <p>Also the worst value score in the draft, and pick 50 went to a kicker.</p>
 </div>
 <div class="gcard ">
@@ -262,8 +274,8 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:78%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:72%"></i></span></div>
 </div>
-<p>Seven picks, four receivers, three backs, no kicker, no defense.</p>
-<p>Malachi Fields at 20 with the board at 53. Odell Beckham, 33, with his last pick.</p>
+<p>He made seven picks, four receivers and three backs, and took neither a kicker nor a defense.</p>
+<p>He took Malachi Fields at 20 when the board had him at 53, then spent his last pick on Odell Beckham, who is 33.</p>
 </div>
 <div class="gcard ">
 <div class="ghd"><div><div class="gname">Luke</div><div class="grec">8-6 in 2025</div></div><div class="gletter">C+</div></div>
@@ -295,8 +307,8 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:62%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:58%"></i></span></div>
 </div>
-<p>Five rookies, no veterans, average age 22.4 on a five-win roster.</p>
-<p>Zachariah Branch at 16 with the board at 48. Second-worst value in the draft.</p>
+<p>He took five rookies and no veterans, averaging 22.4 on a roster that won five games.</p>
+<p>He took Zachariah Branch at 16 when the board had him at 48, which is the second-worst value in the draft.</p>
 </div>
 <div class="gcard ">
 <div class="ghd"><div><div class="gname">Jonathan</div><div class="grec">8-6 in 2025</div></div><div class="gletter">C-</div></div>
@@ -306,8 +318,8 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:25%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:45%"></i></span></div>
 </div>
-<p>Four picks, fewest in the league. One of them was Evan McPherson.</p>
-<p>Denzel Boston at 7 with the board at 31. Jalen Milroe at 43, one pick later than Matt took him last year.</p>
+<p>He had four picks, fewest in the league, and spent one of them on Evan McPherson.</p>
+<p>He took Denzel Boston at 7 when the board had him at 31, and Jalen Milroe at 43, one pick later than Matt took him last year.</p>
 </div>
 <div class="gcard ">
 <div class="ghd"><div><div class="gname">Jeremy</div><div class="grec">6-8 in 2025</div></div><div class="gletter">C-</div></div>
@@ -317,8 +329,8 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:45%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:35%"></i></span></div>
 </div>
-<p>Five picks. A kicker and a defense took two of them. One rookie in the three that were left.</p>
-<p>No back. No quarterback.</p>
+<p>He had five picks, and a kicker and a defense took two of them. Only one of the three that were left is a rookie.</p>
+<p>He drafted no running back and no quarterback.</p>
 </div>
 <div class="gcard lo">
 <div class="ghd"><div><div class="gname">Malcolm</div><div class="grec">5-9 in 2025</div></div><div class="gletter">D+</div></div>
@@ -328,8 +340,8 @@ footer a{color:var(--muted)}
 <div class="ax"><span class="axl">Capital</span><span class="axb"><i style="width:72%"></i></span></div>
 <div class="ax"><span class="axl">Construction</span><span class="axb"><i style="width:35%"></i></span></div>
 </div>
-<p>Traded a 2027 second for Deebo Samuel, age 30, three days before a rookie draft. Fourth trade of his career, in four years.</p>
-<p>Then took one rookie in seven picks. Oldest class in the league at 25.7, on a 5-9 roster, including a second tight end he did not need.</p>
+<p>Traded a 2027 second for Deebo Samuel, age 30, three days before a rookie draft. It was the fourth trade of his career in four years.</p>
+<p>He then took one rookie in seven picks. It is the oldest class in the league at 25.7, on a 5-9 roster, and it includes a second tight end he did not need.</p>
 </div>
 <div class="gcard lo">
 <div class="ghd"><div><div class="gname">Matt A.</div><div class="grec">5-9 in 2025</div></div><div class="gletter">D+</div></div>
@@ -344,14 +356,14 @@ footer a{color:var(--muted)}
 </div>
   </div>
   <div class="note" style="margin-top:22px">
-    A <b>2.27</b> average across twelve teams. No A's, two D+'s, and one of those is writing this.
+    The twelve of you average a <b>2.27</b>. Nobody earned an A, two of you earned a D+, and one of those two is writing this.
   </div>
 </div></section>
 
 <!-- ============ THE BOARD ============ -->
 <section><div class="wrap">
   <h2><span class="n">02</span>The board</h2>
-  <p class="sub">Every pick by round and slot.</p>
+  <p class="sub">Every pick is laid out by round and slot.</p>
 <div class="tablewrap"><table class="board"><thead><tr><th class="corner">RD</th>
 <th class="bh"><span>1</span></th>
 <th class="bh"><span>2</span></th>
@@ -458,7 +470,7 @@ footer a{color:var(--muted)}
     <span><i class="sw" style="background:rgba(255,255,255,.03)"></i>kicker or defense</span>
   </div>
   <div class="note" style="margin-top:20px">
-    Hover any square for the player, the pick and where the board had him.
+    Hover a square to see the player, the manager and where the board had him. On a phone, tap it.
   </div>
 </div></section>
 
@@ -481,14 +493,12 @@ footer a{color:var(--muted)}
     <div class="card">
       <div class="meta">THE OTHER REACHES</div>
       <h3>Jordan +33, David +32, Creger +26</h3>
-      <p>Malachi Fields at 20, board 53. Zachariah Branch at 16, board 48. Chris Bell at 28,
-        board 54.</p>
+      <p>Malachi Fields went at 20 with the board at 53, Zachariah Branch at 16 with the board at 48, and Chris Bell at 28 with the board at 54.</p>
     </div>
     <div class="card">
       <div class="meta">THE OTHER STEALS</div>
       <h3>Raj -24, Reynolds -21, Malcolm -21</h3>
-      <p>Eli Stowers at 48, board 24. Malik Willis at 35, board 14. Bryce Young at 39, board 18.
-        Quarterbacks keep falling in a one quarterback league.</p>
+      <p>Eli Stowers went at 48 with the board at 24, Malik Willis at 35 with the board at 14, and Bryce Young at 39 with the board at 18. Quarterbacks keep falling in a one quarterback league.</p>
     </div>
   </div>
 </div></section>
@@ -526,14 +536,12 @@ footer a{color:var(--muted)}
     <div class="card">
       <div class="meta">BUYING WHILE LOSING</div>
       <h3>Ward drafted eight times</h3>
-      <p>Bought firsts off Raj and Reynolds. Three wins last year, most picks this year, youngest
-        class in the league.</p>
+      <p>He bought firsts off Raj and Reynolds. He won three games last year and brought both the most picks and the youngest class this year.</p>
     </div>
     <div class="card">
       <div class="meta">FEWEST SWINGS</div>
       <h3>Jonathan, four picks</h3>
-      <p>Traded his second to David and his third to Creger. Spent one of the four that were
-        left on a kicker.</p>
+      <p>He traded his second to David and his third to Creger, then spent one of the four that were left on a kicker.</p>
     </div>
   </div>
 </div></section>
@@ -545,30 +553,23 @@ footer a{color:var(--muted)}
 
   <div class="learn">
     <div class="lq">Malcolm does not want rookies</div>
-    <div class="then"><span class="yr">Aug 28</span><span class="tx">Traded a 2027 second for
-      Deebo Samuel, age 30. The fourth trade of his career, in four years.</span></div>
-    <div class="now"><span class="yr">Aug 31</span><span class="tx">Drafted one rookie in seven
-      picks. Oldest class in the league at 25.7, on a roster that won five games.</span></div>
+    <div class="then"><span class="yr">Aug 28</span><span class="tx">He traded a 2027 second for Deebo Samuel, age 30, in the fourth trade of his career in four years.</span></div>
+    <div class="now"><span class="yr">Aug 31</span><span class="tx">He drafted one rookie in seven picks, the oldest class in the league at 25.7, on a roster that won five games.</span></div>
     <div class="verdict no">Verdict: no</div>
   </div>
 
   <div class="learn">
     <div class="lq">Malcolm drafts a quarterback</div>
-    <div class="then"><span class="yr">2025</span><span class="tx">Cameron Ward at pick 7, first
-      round, one quarterback league.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">Bryce Young at pick 39, fourth
-      round, same league.</span></div>
+    <div class="then"><span class="yr">2025</span><span class="tx">He took Cameron Ward at pick 7, in the first round of a one quarterback league.</span></div>
+    <div class="now"><span class="yr">2026</span><span class="tx">He took Bryce Young at pick 39, in the fourth round of the same league.</span></div>
     <div class="verdict part">Verdict: partial credit, thirty-two picks cheaper</div>
   </div>
 
   <div class="learn">
     <div class="lq">Ward drafts a quarterback, a defense and a kicker</div>
-    <div class="then"><span class="yr">2024</span><span class="tx">Daniel Jones, a defense and a
-      kicker.</span></div>
-    <div class="then"><span class="yr">2025</span><span class="tx">Jaxson Dart and Shedeur Sanders,
-      the Buffalo defense, Will Reichard.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">Fernando Mendoza, the Denver
-      defense, Cameron Dicker at pick 50.</span></div>
+    <div class="then"><span class="yr">2024</span><span class="tx">He drafted Daniel Jones, a defense and a kicker.</span></div>
+    <div class="then"><span class="yr">2025</span><span class="tx">He drafted Jaxson Dart and Shedeur Sanders, the Buffalo defense and Will Reichard.</span></div>
+    <div class="now"><span class="yr">2026</span><span class="tx">He drafted Fernando Mendoza, the Denver defense and Cameron Dicker at pick 50.</span></div>
     <div class="verdict no">Verdict: no, three years running</div>
   </div>
 
@@ -584,8 +585,7 @@ footer a{color:var(--muted)}
 
   <div class="learn">
     <div class="lq">Matt cannot decide about Jalen Milroe</div>
-    <div class="then"><span class="yr">2025</span><span class="tx">Drafted him at pick 42, then
-      let him go.</span></div>
+    <div class="then"><span class="yr">2025</span><span class="tx">Matt drafted him at pick 42 and then let him go.</span></div>
     <div class="now"><span class="yr">2026</span><span class="tx">Jonathan drafted him at pick
       43.</span></div>
     <div class="verdict no">Verdict: no</div>
@@ -593,10 +593,8 @@ footer a{color:var(--muted)}
 
   <div class="learn">
     <div class="lq">Reynolds sells picks and keeps winning</div>
-    <div class="then"><span class="yr">2025</span><span class="tx">Sold his capital through 2027,
-      went 12-2, missed the final.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">Showed up with five picks and
-      the best average value in the draft.</span></div>
+    <div class="then"><span class="yr">2025</span><span class="tx">He sold his capital through 2027, went 12-2 and missed the final.</span></div>
+    <div class="now"><span class="yr">2026</span><span class="tx">He showed up with five picks and posted the best average value in the draft.</span></div>
     <div class="verdict yes">Verdict: yes, unfortunately</div>
   </div>
 </div></section>
@@ -604,7 +602,7 @@ footer a{color:var(--muted)}
 <!-- ============ TIMELINE ============ -->
 <section><div class="wrap">
   <h2><span class="n">06</span>The timeline check</h2>
-  <p class="sub">The ages of what you added, against the record you finished with.</p>
+  <p class="sub">These are the ages of what you added, set against the record you finished with.</p>
   <div class="tablewrap"><table>
     <thead><tr><th>Manager</th><th class="num">2025</th><th class="num">Picks</th>
       <th class="num">Rookies</th><th class="num">Vets</th><th class="num">Avg age</th><th>Verdict</th></tr></thead>
@@ -635,33 +633,29 @@ footer a{color:var(--muted)}
   <div class="awards">
     <div class="award"><div class="nm">The Round Trip</div>
       <div class="win">Creger</div>
-      <p>Sold Alvin Kamara for three thirds, spent the thirds, drafted Kamara in the fifth.</p></div>
+      <p>He sold Alvin Kamara for three thirds, spent the thirds, and then drafted Kamara in the fifth.</p></div>
     <div class="award"><div class="nm">Working While You Watched</div>
       <div class="win">Raj</div>
-      <p>Opened trade talks forty-four seconds into the draft and had the first overall pick
-        before the first round was half done.</p></div>
+      <p>He opened trade talks forty-four seconds into the draft and had the first overall pick before the first round was half done.</p></div>
     <div class="award"><div class="nm">Allergic To Rookies</div>
       <div class="win">Malcolm</div>
-      <p>Traded a 2027 second for a 30-year-old receiver three days out, then took one rookie
-        in seven picks at a rookie draft.</p></div>
+      <p>He traded a 2027 second for a 30-year-old receiver three days out, then took one rookie in seven picks at a rookie draft.</p></div>
     <div class="award"><div class="nm">The Shopping List</div>
       <div class="win">Ward</div>
-      <p>A quarterback, a defense and a kicker. Three drafts running.</p></div>
+      <p>He has taken a quarterback, a defense and a kicker in three straight drafts.</p></div>
     <div class="award"><div class="nm">Best Argument For Losing</div>
       <div class="win">Brandon</div>
-      <p>Went 2-12, earned the first overall pick, sold it nine minutes into the draft, and
-        still posted the highest value score of anybody.</p></div>
+      <p>He went 2-12, earned the first overall pick, sold it nine minutes into the draft, and still posted the highest value score of anybody.</p></div>
     <div class="award"><div class="nm">Perpetual Mediocrity, Defended</div>
       <div class="win">Matt</div>
-      <p>Traded his first away and watched a quarterback he cut go one pick later than he took
-        him last year.</p></div>
+      <p>He traded his first away and watched a quarterback he cut go one pick later than he took him last year.</p></div>
   </div>
 </div></section>
 
 <!-- ============ PREDICTIONS ============ -->
 <section><div class="wrap">
   <h2><span class="n">08</span>Predictions, on the record</h2>
-  <p class="sub">Written in August. Graded in next year's State of the League.</p>
+  <p class="sub">These were written in August and get graded in next year's State of the League.</p>
   <div class="preds">
     <div class="pred"><b>Jeremiyah Love finishes as a top-twelve back</b> and Brandon has to hear
       about it every week.</div>
@@ -683,11 +677,10 @@ footer a{color:var(--muted)}
 <!-- ============ CLOSE ============ -->
 <section><div class="wrap">
   <h2><span class="n">09</span>So that happened</h2>
-  <p class="dek" style="max-width:70ch">Seventy-two picks. Eighteen of them borrowed. Four spent
-    on players Raj already gave up on once. The worst team in the league earned the first pick
+  <p class="dek" style="max-width:70ch">Seventy-two picks were made, eighteen of them borrowed, and four went to players Raj had already given up on once. The worst team in the league earned the first pick
     and sold it while the draft was running, to the guy who has won two of the last three.</p>
   <div class="note" style="margin-top:26px">
-    Power rankings and roster breakdowns before Week 1. Screenshot the predictions you hate.
+    Power rankings and roster breakdowns land before Week 1, so screenshot the predictions you hate while you still can.
   </div>
 </div></section>
 
@@ -695,5 +688,57 @@ footer a{color:var(--muted)}
   <p>August 2026. Hootie Hoo y'all.</p>
 </div></footer>
 
+
+<script>
+(function(){
+  var cells=[].slice.call(document.querySelectorAll('.board td[title]'));
+  if(!cells.length) return;
+  cells.forEach(function(c){ c.setAttribute('data-tip',c.getAttribute('title')); c.removeAttribute('title'); });
+  var tip=document.createElement('div'); tip.className='bt'; tip.setAttribute('role','tooltip');
+  document.body.appendChild(tip);
+  var cur=null;
+  function parse(raw){
+    var mgr='', rest=raw, meta='';
+    var i=raw.indexOf(' \u2014 ');
+    if(i>-1){ mgr=raw.slice(0,i); rest=raw.slice(i+3); }
+    var j=rest.indexOf(', board ');
+    if(j>-1){ meta=rest.slice(j+2); rest=rest.slice(0,j); }
+    return {player:rest, mgr:mgr, meta:meta};
+  }
+  function show(c){
+    if(cur===c) return;
+    cur=c;
+    var d=parse(c.getAttribute('data-tip')||'');
+    tip.textContent='';
+    var p=document.createElement('span'); p.className='p'; p.textContent=d.player; tip.appendChild(p);
+    if(d.mgr){ var m=document.createElement('span'); m.className='m'; m.textContent=d.mgr; tip.appendChild(m); }
+    if(d.meta){ var s=document.createElement('span'); s.className='s'; s.textContent=d.meta; tip.appendChild(s); }
+    tip.classList.add('on');
+  }
+  function hide(){ cur=null; tip.classList.remove('on'); document.querySelectorAll('.board td.lit').forEach(function(x){x.classList.remove('lit');}); }
+  function place(x,y){
+    var r=tip.getBoundingClientRect(), pad=14;
+    var left=x+pad, top=y+pad;
+    if(left+r.width>window.innerWidth-8) left=x-r.width-pad;
+    if(top+r.height>window.innerHeight-8) top=y-r.height-pad;
+    tip.style.left=Math.max(8,left)+'px'; tip.style.top=Math.max(8,top)+'px';
+  }
+  cells.forEach(function(c){
+    var over=function(e){ show(c); place(e.clientX,e.clientY); };
+    c.addEventListener('mouseenter',over);
+    c.addEventListener('mouseover',over);
+    c.addEventListener('mousemove',over);
+    c.addEventListener('mouseleave',hide);
+    c.addEventListener('click',function(e){
+      e.stopPropagation();
+      if(cur===c){ hide(); return; }
+      hide(); c.classList.add('lit'); show(c);
+      var b=c.getBoundingClientRect(); place(b.left+b.width/2, b.bottom-6);
+    });
+  });
+  document.addEventListener('click',hide);
+  window.addEventListener('scroll',hide,{passive:true});
+})();
+</script>
 </body>
 </html>
