@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Draft Recap 2026 - six rounds, seventy-two mistakes</title>
+<title>League Preview 2026 - ranked before a single snap</title>
 <style>
 :root{
   --black:#0B1315; --surface:#111B1E; --raised:#17252A; --line:#22343A;
@@ -55,12 +55,6 @@ h1{
 h1 .g{color:var(--gold);display:block}
 .dek{font-size:clamp(17px,2.3vw,21px);color:var(--grey);max-width:62ch;margin:0 0 8px;line-height:1.55}
 
-/* ---------- kpi ---------- */
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:42px}
-.kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 18px}
-.kpi .v{font-size:38px;font-weight:800;letter-spacing:-.03em;color:var(--gold);line-height:1}
-.kpi .k{font-size:12.5px;color:var(--muted);margin-top:9px;line-height:1.35}
-
 /* ---------- headings ---------- */
 h2{font-size:clamp(29px,4.6vw,44px);letter-spacing:-.03em;line-height:1.06;margin:0 0 10px;font-weight:800}
 h2 .n{font-family:var(--mono);font-size:13px;color:var(--gold);display:block;
@@ -68,43 +62,30 @@ h2 .n{font-family:var(--mono);font-size:13px;color:var(--gold);display:block;
 .sub{color:var(--muted);max-width:70ch;margin:0 0 34px;font-size:16.5px}
 h3{font-size:21px;letter-spacing:-.015em;margin:0 0 8px;font-weight:700}
 
-/* ---------- tables ---------- */
-.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -22px;padding:0 22px}
-table{border-collapse:collapse;width:100%;font-size:15px;min-width:640px}
-th{text-align:left;font-family:var(--mono);font-size:11px;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--dim);font-weight:600;
-  padding:0 12px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
-td{padding:12px;border-bottom:1px solid rgba(34,52,58,.6);vertical-align:middle}
-tbody tr:hover td{background:rgba(253,187,48,.05)}
-.num{font-family:var(--mono);font-size:14px;text-align:right;white-space:nowrap}
-th.num{text-align:right}
-.rk{font-family:var(--mono);color:var(--dim);font-size:13px;width:38px}
-.who b{font-weight:700}
-.pos{color:var(--pos)} .neg{color:var(--neg)}
-.bar{display:block;height:4px;background:rgba(255,255,255,.07);border-radius:2px;margin-top:6px;overflow:hidden}
-.bar i{display:block;height:100%;border-radius:2px}
+/* ---------- power rankings ---------- */
+.pranks{display:grid;gap:10px}
+.prank{background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:18px 22px;display:flex;align-items:flex-start;gap:18px}
+.prank.top{border-color:var(--gold-dim);background:linear-gradient(160deg,rgba(253,187,48,.08),var(--surface) 60%)}
+.prank.bot{border-color:rgba(230,138,124,.28)}
+.prank .pn{font-family:var(--mono);font-size:32px;font-weight:800;color:var(--gold);
+  width:52px;flex:none;text-align:center;line-height:1.1}
+.prank.bot .pn{color:var(--neg)}
+.prank .pb{flex:1;min-width:0}
+.prank .pname{font-size:19px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.prank .prec{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.05em;font-weight:400}
+.prank .pgrade{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.08em;font-weight:400}
+.prank p{font-size:14.5px;color:var(--grey);margin:6px 0 0;line-height:1.55}
 
-/* ---------- draft board ---------- */
-.board{min-width:900px;font-size:12px}
-.board th.corner{font-size:10px;color:var(--dim);width:34px}
-.board th.bh{padding:0 0 10px;text-align:center}
-.board th.bh span{display:inline-block;font-size:11px;letter-spacing:.02em;text-transform:none;color:var(--dim)}
-.board th.br{text-align:center;padding:8px 6px;font-family:var(--mono);font-size:12px;
-  color:var(--gold);border-bottom:1px solid rgba(34,52,58,.6)}
-.board td{text-align:center;padding:8px 5px;border:2px solid var(--black);line-height:1.25}
-.board td b{display:block;font-size:11.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:80px;margin:0 auto}
-.board td i{display:block;font-family:var(--mono);font-size:9px;font-style:normal;opacity:.62;margin-top:2px}
-.legend{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:16px;font-size:13px;color:var(--muted)}
-.legend .sw{display:inline-block;width:26px;height:12px;border-radius:2px;margin-right:7px;vertical-align:-1px}
-.picks{min-width:720px;font-size:14px}
-
-/* ---------- grade cards ---------- */
-.grades{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+/* ---------- team + grade cards ---------- */
+.teams,.grades{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .gcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
 .gcard.hi{border-color:var(--gold-dim);background:linear-gradient(160deg,rgba(253,187,48,.08),var(--surface) 60%)}
 .gcard.lo{border-color:rgba(230,138,124,.28)}
 .ghd{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
 .gname{font-size:25px;font-weight:800;letter-spacing:-.02em;line-height:1.1}
+.trank{display:inline-block;background:var(--gold);color:#0B1315;font-family:var(--mono);
+  font-weight:800;font-size:12.5px;border-radius:6px;padding:2px 8px;margin-right:9px;vertical-align:3px}
 .grec{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin-top:3px;letter-spacing:.05em}
 .gletter{font-size:40px;font-weight:800;letter-spacing:-.04em;color:var(--gold);line-height:1}
 .gcard.lo .gletter{color:var(--neg)}
@@ -116,30 +97,6 @@ th.num{text-align:right}
 .axb i{display:block;height:100%;background:var(--gold);border-radius:3px}
 .gcard p{font-size:14.5px;color:var(--grey);margin:0 0 10px;line-height:1.6}
 .gcard p:last-child{margin-bottom:0}
-
-/* ---------- learn rows ---------- */
-.learn{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);
-  border-radius:12px;padding:22px 24px;margin-bottom:14px}
-.learn .lq{font-size:19px;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
-.learn .then,.learn .now{display:flex;gap:14px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap}
-.learn .yr{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim);
-  width:58px;flex:none;text-transform:uppercase}
-.learn .tx{font-size:15px;color:var(--grey);flex:1;min-width:240px;line-height:1.55}
-.verdict{margin-top:14px;padding-top:13px;border-top:1px dashed var(--line);
-  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase}
-.verdict.no{color:var(--neg)} .verdict.part{color:var(--gold)} .verdict.yes{color:var(--pos)}
-
-/* ---------- generic cards ---------- */
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
-.card p{font-size:15px;color:var(--grey);margin:10px 0 0;line-height:1.6}
-.card .meta{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.05em}
-.awards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.award{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
-.award .nm{font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;
-  color:var(--gold);margin-bottom:9px}
-.award .win{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
-.award p{font-size:14.5px;color:var(--grey);margin:0;line-height:1.55}
 
 /* ---------- predictions ---------- */
 .preds{counter-reset:p;display:grid;gap:12px}
@@ -155,45 +112,9 @@ th.num{text-align:right}
 footer{padding:52px 0 70px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px;line-height:1.7}
 footer a{color:var(--muted)}
 
-
-/* ---------- trade cards ---------- */
-.trade{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);
-  border-radius:12px;padding:26px 26px 24px;margin-bottom:18px}
-.trade .hd{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:10px}
-.trade .ttl{font-size:23px;font-weight:800;letter-spacing:-.02em}
-.trade .date{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.06em;white-space:nowrap}
-.swap{display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;margin:18px 0}
-.side{background:var(--raised);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
-.side .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:7px}
-.side ul{margin:0;padding-left:17px}
-.side li{font-size:14.5px;margin:3px 0}
-.side.got{border-color:rgba(253,187,48,.3)}
-.arrow{color:var(--gold);font-size:20px;text-align:center}
-.receipt{background:rgba(253,187,48,.07);border:1px solid rgba(253,187,48,.22);
-  border-radius:9px;padding:14px 16px;font-size:15px;margin:16px 0 14px;line-height:1.6}
-.receipt b{color:var(--gold)}
-.receipt .rl{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
-.kick{font-size:15.5px;color:var(--grey);margin:0;line-height:1.6}
-.kick b{color:var(--ink)}
-
-
-/* ---------- board tooltip ---------- */
-.board td[data-tip]{cursor:pointer}
-.board td[data-tip]:hover,.board td.lit{outline:2px solid var(--gold);outline-offset:-2px}
-.bt{position:fixed;z-index:60;pointer-events:none;opacity:0;transform:translateY(3px);
-  transition:opacity .12s ease,transform .12s ease;
-  background:var(--raised);border:1px solid var(--gold-dim);border-radius:9px;
-  padding:10px 13px;max-width:250px;box-shadow:0 10px 28px rgba(0,0,0,.55);line-height:1.4}
-.bt.on{opacity:1;transform:translateY(0)}
-.bt .p{display:block;font-size:14px;font-weight:700;color:var(--ink)}
-.bt .m{display:block;font-family:var(--mono);font-size:11px;color:var(--gold);margin-top:4px}
-.bt .s{display:block;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:2px}
-
 @media(max-width:860px){
-  .kpis{grid-template-columns:repeat(2,1fr)}
-  .cards,.awards,.grades{grid-template-columns:1fr}
-  .swap{grid-template-columns:1fr;gap:10px}
-  .arrow{transform:rotate(90deg);font-size:17px}
+  .teams,.grades{grid-template-columns:1fr}
+  .prank{flex-wrap:wrap}
   body{font-size:16px}
   section{padding:50px 0}
   .nav .wrap{gap:18px}
@@ -203,23 +124,206 @@ footer a{color:var(--muted)}
 <body>
 <nav class="nav"><div class="wrap">
   <a href="index.html">State of the League</a>
-  <a href="draft-2026.html" class="on">Draft Recap 2026</a>
+  <a href="draft-2026.html" class="on">League Preview 2026</a>
 </div></nav>
 
 <!-- ============ HERO ============ -->
 <div class="hero">
   <div class="wrap">
-    <p class="eyebrow">six rounds · seventy-two picks · one defensible decision</p>
-    <h1>Draft<br>Recap<span class="g">2026</span></h1>
-    <p class="dek">Seventy-two picks, twelve of them kickers and defenses…</p>
+    <p class="eyebrow">twelve teams · one power ranking · zero games played</p>
+    <h1>League<br>Preview<span class="g">2026</span></h1>
+    <p class="dek">Twelve rosters have been ranked before a single snap. The draft is over — this is what it bought you.</p>
     <p class="dek" style="font-size:16.5px;color:var(--muted);margin-top:14px;max-width:64ch">
-      Everything here is graded against Sleeper's own board, so complaints go to Sleeper.</p>
+      Power rankings are graded against nothing but the twelve of you, so there is nobody else to blame.</p>
   </div>
 </div>
 
+<!-- ============ POWER RANKINGS ============ -->
+<section><div class="wrap">
+  <h2><span class="n">01</span>Power rankings</h2>
+  <p class="sub">The rank blends half your 2025 record, three-tenths your draft grade, and two-tenths
+    whether your roster's age matches your record. Nobody's own rank moves until Week 1 does.</p>
+  <div class="pranks">
+    <div class="prank top">
+      <div class="pn">1</div>
+      <div class="pb">
+        <div class="pname">Reynolds <span class="prec">12-2 in 2025</span> <span class="pgrade">B DRAFT</span></div>
+        <p>He sold his 2026 capital down to five picks for the third year running and still posted the
+          best average value in the draft, taking Malik Willis fourteen slots below where the board had
+          him. Twelve wins on five picks is not a system anyone else has managed to copy.</p>
+      </div>
+    </div>
+    <div class="prank top">
+      <div class="pn">2</div>
+      <div class="pb">
+        <div class="pname">Creger <span class="prec">11-3 in 2025</span> <span class="pgrade">B+ DRAFT</span></div>
+        <p>He sold Alvin Kamara for three thirds, spent all three in this draft, and then drafted Kamara
+          back in the fifth round. He won eleven games and still found money on the floor.</p>
+      </div>
+    </div>
+    <div class="prank top">
+      <div class="pn">3</div>
+      <div class="pb">
+        <div class="pname">Raj <span class="prec">9-5 in 2025</span> <span class="pgrade">A- DRAFT</span></div>
+        <p>He opened trade talks forty-four seconds into his own draft and owned the first overall pick
+          before round one was half over. It is the best draft grade in the league, on a team that
+          already has two rings.</p>
+      </div>
+    </div>
+    <div class="prank">
+      <div class="pn">4</div>
+      <div class="pb">
+        <div class="pname">Jordan <span class="prec">10-4 in 2025</span> <span class="pgrade">C+ DRAFT</span></div>
+        <p>He has the second-best record in league history and still reached thirty-three slots for a
+          receiver nobody else wanted. The roster is good; the patience is worse than the record
+          suggests he can afford.</p>
+      </div>
+    </div>
+    <div class="prank">
+      <div class="pn">5</div>
+      <div class="pb">
+        <div class="pname">Luke <span class="prec">8-6 in 2025</span> <span class="pgrade">C+ DRAFT</span></div>
+        <p>He has the best regular season record this league has ever produced, and he still does not
+          have a Sleeper ring to show for it. He traded for Alvin Kamara and gave him back sixteen days
+          later, which about sums up the season.</p>
+      </div>
+    </div>
+    <div class="prank">
+      <div class="pn">6</div>
+      <div class="pb">
+        <div class="pname">David <span class="prec">5-9 in 2025</span> <span class="pgrade">C DRAFT</span></div>
+        <p>He built five rookies and no veterans, the correct plan for a team that won five games, then
+          reached thirty-two slots for Zachariah Branch anyway. He also owned Alvin Kamara for four days
+          this August, in case the league needed one more middleman.</p>
+      </div>
+    </div>
+    <div class="prank">
+      <div class="pn">7</div>
+      <div class="pb">
+        <div class="pname">Ward <span class="prec">3-11 in 2025</span> <span class="pgrade">B- DRAFT</span></div>
+        <p>He bought youth with other people's draft picks and built the youngest, most
+          correctly-assembled roster in the league for a team that just went 3-11. He also drafted a
+          quarterback, a defense and a kicker for the third year running, which is either a plan or a
+          compulsion.</p>
+      </div>
+    </div>
+    <div class="prank">
+      <div class="pn">8</div>
+      <div class="pb">
+        <div class="pname">Jonathan <span class="prec">8-6 in 2025</span> <span class="pgrade">C- DRAFT</span></div>
+        <p>He made four picks, fewest in the league, and spent one of them on a kicker. He inherited
+          Matt's old quarterback problem a year late and one pick cheaper.</p>
+      </div>
+    </div>
+    <div class="prank">
+      <div class="pn">9</div>
+      <div class="pb">
+        <div class="pname">Jeremy <span class="prec">6-8 in 2025</span> <span class="pgrade">C- DRAFT</span></div>
+        <p>He drafted no running back and no quarterback, and a kicker and a defense ate two of his
+          five picks. There is no plan here to evaluate.</p>
+      </div>
+    </div>
+    <div class="prank bot">
+      <div class="pn">10</div>
+      <div class="pb">
+        <div class="pname">Matt A. <span class="prec">5-9 in 2025</span> <span class="pgrade">D+ DRAFT</span></div>
+        <p>He traded his first-round pick away, then spent his best remaining pick on a 25-year-old
+          running back for a five-win team. He named the team Perpetual Mediocrity in 2024 and has been
+          protecting the trademark ever since.</p>
+      </div>
+    </div>
+    <div class="prank bot">
+      <div class="pn">11</div>
+      <div class="pb">
+        <div class="pname">Malcolm <span class="prec">5-9 in 2025</span> <span class="pgrade">D+ DRAFT</span></div>
+        <p>He traded a future second for a 30-year-old receiver three days before a rookie draft, then
+          drafted exactly one rookie. He has the oldest roster in the league and is going nowhere at the
+          fastest possible speed.</p>
+      </div>
+    </div>
+    <div class="prank bot">
+      <div class="pn">12</div>
+      <div class="pb">
+        <div class="pname">Brandon <span class="prec">2-12 in 2025</span> <span class="pgrade">C DRAFT</span></div>
+        <p>Every player he took fell to him, the best value score in the draft, on a roster that will
+          need every bit of it. He earned the first overall pick by going 2-12 and sold it nine minutes
+          into the draft, to the guy who has won two of the last three titles.</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ TEAM BY TEAM ============ -->
+<section><div class="wrap">
+  <h2><span class="n">02</span>Team by team</h2>
+  <p class="sub">Here's what each roster actually looks like heading into Week 1, for better or worse.</p>
+  <div class="teams">
+<div class="gcard hi">
+<div class="ghd"><div><div class="gname"><span class="trank">#1</span>Reynolds</div><div class="grec">12-2 in 2025 · B draft</div></div></div>
+<p>He sold his 2026 capital down to five picks for the third year running, went 12-2 anyway, and still posted the best average value in the entire draft, taking Malik Willis at 35 when the board had him at 14.</p>
+<p>Selling picks and winning is supposed to catch up with somebody eventually. It has not caught up with him yet, and nothing about this draft suggests this is the year it starts.</p>
+</div>
+<div class="gcard hi">
+<div class="ghd"><div><div class="gname"><span class="trank">#2</span>Creger</div><div class="grec">11-3 in 2025 · B+ draft</div></div></div>
+<p>He sold Alvin Kamara last October for three third-round picks, spent all three in this same draft at 28, 29 and 31, and then drafted Kamara back in the fifth round anyway.</p>
+<p>He won eleven games with eight picks, four of them veterans, on a roster built to win now. He also picked up MarShawn Lloyd, one of the players Raj gave up on in 2024 — Raj's castoffs keep finding better homes than Raj found for them.</p>
+</div>
+<div class="gcard hi">
+<div class="ghd"><div><div class="gname"><span class="trank">#3</span>Raj</div><div class="grec">9-5 in 2025 · A- draft</div></div></div>
+<p>Two Sleeper titles and the best draft grade in the league were not enough to keep him out of his own draft chat — he opened talks forty-four seconds after the clock started and owned the first overall pick within nine minutes.</p>
+<p>He used it on Jeremiyah Love, the top player on the board, then spent his last pick on Jaylen Wright, a player from his own 2024 class he had already given up on once. The empire keeps buying back its own mistakes and keeps winning anyway.</p>
+</div>
+<div class="gcard ">
+<div class="ghd"><div><div class="gname"><span class="trank">#4</span>Jordan</div><div class="grec">10-4 in 2025 · C+ draft</div></div></div>
+<p>He has the second-best record in league history, seven picks, and none wasted on a kicker or a defense — and still reached thirty-three slots for Malachi Fields, a receiver nobody else wanted.</p>
+<p>He also took Tank Bigsby, one of Raj's discarded 2024 rookies, and closed the draft with a 33-year-old Odell Beckham. The roster is good; the patience is worse than the record suggests he can afford.</p>
+</div>
+<div class="gcard ">
+<div class="ghd"><div><div class="gname"><span class="trank">#5</span>Luke</div><div class="grec">8-6 in 2025 · C+ draft</div></div></div>
+<p>He has the best regular season record this league has ever produced, and he still does not have a Sleeper ring to show for it.</p>
+<p>He traded for Alvin Kamara in August and gave him up sixteen days later — Creger drafted him right back. Five picks were left after he sold his second, third and fourth, and bought Matt's first.</p>
+</div>
+<div class="gcard ">
+<div class="ghd"><div><div class="gname"><span class="trank">#6</span>David</div><div class="grec">5-9 in 2025 · C draft</div></div></div>
+<p>He built five rookies and no veterans, the correct plan for a team that won five games, then reached thirty-two slots for Zachariah Branch anyway, the second-worst value score in the draft.</p>
+<p>He also owned Alvin Kamara for four days this August, the middle stop between Creger selling him and Luke giving him back. It is the right philosophy with the wrong execution, the same problem half this league has.</p>
+</div>
+<div class="gcard ">
+<div class="ghd"><div><div class="gname"><span class="trank">#7</span>Ward</div><div class="grec">3-11 in 2025 · B- draft</div></div></div>
+<p>He bought first-round picks off Raj and Reynolds, drafted eight players, and none of them is older than 23 — the youngest, most correctly-built roster in the league for a team that just went 3-11.</p>
+<p>He also drafted a quarterback, a defense and a kicker for the third straight year, reached thirty-five slots for Germie Bernard, and posted the worst value score of anybody. The plan is exactly right; the execution is the problem, same as always.</p>
+</div>
+<div class="gcard ">
+<div class="ghd"><div><div class="gname"><span class="trank">#8</span>Jonathan</div><div class="grec">8-6 in 2025 · C- draft</div></div></div>
+<p>He made four picks, fewest in the league, and traded his second to David and his third to Creger just to end up with less than half of everyone else's swings.</p>
+<p>He also inherited Matt's old quarterback problem, drafting Jalen Milroe one pick later than Matt did last year, right before Matt cut him. He made the playoffs in 2025 on defense, and this draft did not build on it.</p>
+</div>
+<div class="gcard ">
+<div class="ghd"><div><div class="gname"><span class="trank">#9</span>Jeremy</div><div class="grec">6-8 in 2025 · C- draft</div></div></div>
+<p>He drafted no running back and no quarterback. A kicker and a defense ate two of his five picks, and the three players left include exactly one rookie.</p>
+<p>There is no timeline here to evaluate, because there is no plan. A 6-8 team needs a direction, and this draft did not pick one.</p>
+</div>
+<div class="gcard lo">
+<div class="ghd"><div><div class="gname"><span class="trank">#10</span>Matt A.</div><div class="grec">5-9 in 2025 · D+ draft</div></div></div>
+<p>He traded his first-round pick to Luke, then spent his best remaining pick on a 25-year-old running back for a team that won five games. Jalen Milroe, whom he drafted and cut last year, went one pick later this year to Jonathan.</p>
+<p>He named the team Perpetual Mediocrity in 2024. This draft is the trademark renewal.</p>
+</div>
+<div class="gcard lo">
+<div class="ghd"><div><div class="gname"><span class="trank">#11</span>Malcolm</div><div class="grec">5-9 in 2025 · D+ draft</div></div></div>
+<p>He traded a 2027 second for Deebo Samuel, age 30, three days before a rookie draft — the fourth trade of his career in four years — then drafted exactly one rookie in seven picks.</p>
+<p>It is the oldest roster in the league at 25.7, on a team that won five games, and it includes a second tight end he did not need. He also took a quarterback in the fourth round, a year after taking one in the first round, which is the only sign of growth on this card.</p>
+</div>
+<div class="gcard lo">
+<div class="ghd"><div><div class="gname"><span class="trank">#12</span>Brandon</div><div class="grec">2-12 in 2025 · C draft</div></div></div>
+<p>Every player he took fell to him, the best value score in the draft, on a roster that will need every bit of it. He earned the first overall pick by going 2-12 and sold it nine minutes into the draft, to the guy who has won two of the last three titles.</p>
+<p>He also picked up Keaton Mitchell, another name off Raj's 2024 discard pile. The best value score in the room and the worst record in the league is not a combination that fixes itself.</p>
+</div>
+  </div>
+</div></section>
+
 <!-- ============ GRADES ============ -->
 <section><div class="wrap">
-  <h2><span class="n">01</span>The grades</h2>
+  <h2><span class="n">03</span>The grades</h2>
   <p class="sub"><b>Value</b> measures where you took him against the board, <b>timeline</b> weighs the ages against your record, <b>capital</b> counts the picks you brought, and <b>construction</b> asks whether the six add up to a roster.</p>
   <div class="grades">
 <div class="gcard hi">
@@ -360,302 +464,10 @@ footer a{color:var(--muted)}
   </div>
 </div></section>
 
-<!-- ============ THE BOARD ============ -->
-<section><div class="wrap">
-  <h2><span class="n">02</span>The board</h2>
-  <p class="sub">Every pick is laid out by round and slot.</p>
-<div class="tablewrap"><table class="board"><thead><tr><th class="corner">RD</th>
-<th class="bh"><span>1</span></th>
-<th class="bh"><span>2</span></th>
-<th class="bh"><span>3</span></th>
-<th class="bh"><span>4</span></th>
-<th class="bh"><span>5</span></th>
-<th class="bh"><span>6</span></th>
-<th class="bh"><span>7</span></th>
-<th class="bh"><span>8</span></th>
-<th class="bh"><span>9</span></th>
-<th class="bh"><span>10</span></th>
-<th class="bh"><span>11</span></th>
-<th class="bh"><span>12</span></th>
-</tr></thead><tbody>
-<tr><th class="br">1</th>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Raj — Jeremiyah Love (RB), board 1 vs pick 1"><b>Love</b><i>Raj</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Ward — Carnell Tate (WR), board 3 vs pick 2"><b>Tate</b><i>Ward</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Malcolm — Jadarian Price (RB), board 2 vs pick 3"><b>Price</b><i>Malcolm</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="David — KC Concepcion (WR), board 10 vs pick 4"><b>Concepcion</b><i>David</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Luke — Kenyon Sadiq (TE), board 9 vs pick 5"><b>Sadiq</b><i>Luke</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Jeremy — Makai Lemon (WR), board 5 vs pick 6"><b>Lemon</b><i>Jeremy</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Jonathan — Denzel Boston (WR), board 31 vs pick 7"><b>Boston</b><i>Jonathan</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Luke — Jonah Coleman (RB), board 12 vs pick 8"><b>Coleman</b><i>Luke</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Creger — De&#x27;Zhaun Stribling (WR), board 13 vs pick 9"><b>Stribling</b><i>Creger</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Ward — Fernando Mendoza (QB), board 7 vs pick 10"><b>Mendoza</b><i>Ward</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Jordan — Ja&#x27;Kobi Lane (WR), board 29 vs pick 11"><b>Lane</b><i>Jordan</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Ward — Nicholas Singleton (RB), board 37 vs pick 12"><b>Singleton</b><i>Ward</i></td>
-</tr>
-<tr><th class="br">2</th>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Brandon — Jordyn Tyson (WR), board 4 vs pick 13"><b>Tyson</b><i>Brandon</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Ward — Germie Bernard (WR), board 49 vs pick 14"><b>Bernard</b><i>Ward</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Malcolm — Chig Okonkwo (TE), board 22 vs pick 15"><b>Okonkwo</b><i>Malcolm</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="David — Zachariah Branch (WR), board 48 vs pick 16"><b>Branch</b><i>David</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Matt A. — Zach Charbonnet (RB), board 8 vs pick 17"><b>Charbonnet</b><i>Matt A.</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Jeremy — AJ Barner (TE), board 17 vs pick 18"><b>Barner</b><i>Jeremy</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="David — Los Angeles Rams (DEF)"><b>LAR</b><i>David</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Jordan — Malachi Fields (WR), board 53 vs pick 20"><b>Fields</b><i>Jordan</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Reynolds — Mike Washington (RB), board 23 vs pick 21"><b>Washington</b><i>Reynolds</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Matt A. — Terrance Ferguson (TE), board 25 vs pick 22"><b>Ferguson</b><i>Matt A.</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Creger — Tyler Allgeier (RB), board 6 vs pick 23"><b>Allgeier</b><i>Creger</i></td>
-<td style="background:rgba(230,138,124,.15);color:#EDEFEF" title="Jordan — Kaelon Black (RB), board 34 vs pick 24"><b>Black</b><i>Jordan</i></td>
-</tr>
-<tr><th class="br">3</th>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Brandon — Emmett Johnson (RB), board 11 vs pick 25"><b>Johnson</b><i>Brandon</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Ward — Denver Broncos (DEF)"><b>DEN</b><i>Ward</i></td>
-<td style="background:rgba(230,138,124,.15);color:#EDEFEF" title="Malcolm — Jalen Nailor (WR), board 39 vs pick 27"><b>Nailor</b><i>Malcolm</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Creger — Chris Bell (WR), board 54 vs pick 28"><b>Bell</b><i>Creger</i></td>
-<td style="background:rgba(230,138,124,.15);color:#EDEFEF" title="Creger — Cyrus Allen (WR), board 44 vs pick 29"><b>Allen</b><i>Creger</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Jeremy — Pittsburgh Steelers (DEF)"><b>PIT</b><i>Jeremy</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Creger — MarShawn Lloyd (RB), board 21 vs pick 31"><b>Lloyd</b><i>Creger</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Luke — Ty Simpson (QB), board 56 vs pick 32"><b>Simpson</b><i>Luke</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Jordan — Tank Bigsby (RB), board 27 vs pick 33"><b>Bigsby</b><i>Jordan</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Malcolm — T.J. Hockenson (TE), board 19 vs pick 34"><b>Hockenson</b><i>Malcolm</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Reynolds — Malik Willis (QB), board 14 vs pick 35"><b>Willis</b><i>Reynolds</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Raj — Omar Cooper (WR), board 30 vs pick 36"><b>Cooper</b><i>Raj</i></td>
-</tr>
-<tr><th class="br">4</th>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Brandon — Keaton Mitchell (RB), board 28 vs pick 37"><b>Mitchell</b><i>Brandon</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Ward — Adam Randall (RB), board 59 vs pick 38"><b>Randall</b><i>Ward</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Malcolm — Bryce Young (QB), board 18 vs pick 39"><b>Young</b><i>Malcolm</i></td>
-<td style="background:rgba(230,138,124,.15);color:#EDEFEF" title="David — Carson Beck (QB), board 57 vs pick 40"><b>Beck</b><i>David</i></td>
-<td style="background:rgba(230,138,124,.15);color:#EDEFEF" title="Matt A. — Caleb Douglas (WR), board 51 vs pick 41"><b>Douglas</b><i>Matt A.</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Raj — Kaytron Allen (RB), board 33 vs pick 42"><b>Allen</b><i>Raj</i></td>
-<td style="background:rgba(230,138,124,.30);color:#EDEFEF" title="Jonathan — Jalen Milroe (QB), board 65 vs pick 43"><b>Milroe</b><i>Jonathan</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Raj — Demond Claiborne (RB), board 45 vs pick 44"><b>Claiborne</b><i>Raj</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Creger — New England Patriots (DEF)"><b>NE</b><i>Creger</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Reynolds — Antonio Williams (WR), board 32 vs pick 46"><b>Williams</b><i>Reynolds</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Jordan — Kaleb Johnson (RB), board 42 vs pick 47"><b>Johnson</b><i>Jordan</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Raj — Eli Stowers (TE), board 24 vs pick 48"><b>Stowers</b><i>Raj</i></td>
-</tr>
-<tr><th class="br">5</th>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Brandon — Kayshon Boutte (WR), board 36 vs pick 49"><b>Boutte</b><i>Brandon</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Ward — Cameron Dicker (K), board 15 vs pick 50"><b>Dicker</b><i>Ward</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Malcolm — Cam Little (K), board 20 vs pick 51"><b>Little</b><i>Malcolm</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="David — Elijah Sarratt (WR), board 52 vs pick 52"><b>Sarratt</b><i>David</i></td>
-<td style="background:rgba(230,138,124,.15);color:#EDEFEF" title="Matt A. — Seth McGowan (RB), board 62 vs pick 53"><b>McGowan</b><i>Matt A.</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Jeremy — Malik Washington (WR), board 46 vs pick 54"><b>Washington</b><i>Jeremy</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Jonathan — Evan McPherson (K), board 35 vs pick 55"><b>McPherson</b><i>Jonathan</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Luke — Baltimore Ravens (DEF)"><b>BAL</b><i>Luke</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Creger — Alvin Kamara (RB), board 16 vs pick 57"><b>Kamara</b><i>Creger</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Reynolds — Ted Hurst (WR), board 50 vs pick 58"><b>Hurst</b><i>Reynolds</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Jordan — Barion Brown (WR), board 64 vs pick 59"><b>Brown</b><i>Jordan</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Raj — Skyler Bell (WR), board 58 vs pick 60"><b>Bell</b><i>Raj</i></td>
-</tr>
-<tr><th class="br">6</th>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Brandon — Minnesota Vikings (DEF)"><b>MIN</b><i>Brandon</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="Ward — Zavion Thomas (WR), board 60 vs pick 62"><b>Thomas</b><i>Ward</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Malcolm — Tre Tucker (WR), board 47 vs pick 63"><b>Tucker</b><i>Malcolm</i></td>
-<td style="background:rgba(255,255,255,.045);color:#C5C6C8" title="David — Oscar Delp (TE), board 61 vs pick 64"><b>Delp</b><i>David</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Matt A. — Jacksonville Jaguars (DEF)"><b>JAX</b><i>Matt A.</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Jeremy — Will Reichard (K), board 40 vs pick 66"><b>Reichard</b><i>Jeremy</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Jonathan — Ray Davis (RB), board 38 vs pick 67"><b>Davis</b><i>Jonathan</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Luke — Keon Coleman (WR), board 55 vs pick 68"><b>Coleman</b><i>Luke</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Creger — Pat Bryant (WR), board 41 vs pick 69"><b>Bryant</b><i>Creger</i></td>
-<td style="background:rgba(255,255,255,.03);color:#6E787C" title="Reynolds — Jake Bates (K), board 26 vs pick 70"><b>Bates</b><i>Reynolds</i></td>
-<td style="background:rgba(253,187,48,.20);color:#EDEFEF" title="Jordan — Odell Beckham (WR), board 63 vs pick 71"><b>Beckham</b><i>Jordan</i></td>
-<td style="background:rgba(253,187,48,.42);color:#0B1315;font-weight:700" title="Raj — Jaylen Wright (RB), board 43 vs pick 72"><b>Wright</b><i>Raj</i></td>
-</tr>
-</tbody></table></div>
-  <div class="legend">
-    <span><i class="sw" style="background:rgba(253,187,48,.42)"></i>fell to you</span>
-    <span><i class="sw" style="background:rgba(255,255,255,.045)"></i>about right</span>
-    <span><i class="sw" style="background:rgba(230,138,124,.30)"></i>you reached</span>
-    <span><i class="sw" style="background:rgba(255,255,255,.03)"></i>kicker or defense</span>
-  </div>
-  <div class="note" style="margin-top:20px">
-    Hover a square to see the player, the manager and where the board had him. On a phone, tap it.
-  </div>
-</div></section>
-
-<!-- ============ REACHES AND STEALS ============ -->
-<section><div class="wrap">
-  <h2><span class="n">03</span>Reaches and steals</h2>
-  <p class="sub">Kickers and defenses are left out. Sleeper rates them generously and all twelve
-    of you correctly ignored that.</p>
-  <div class="cards">
-    <div class="card">
-      <div class="meta">BIGGEST REACH</div>
-      <h3>Ward takes Germie Bernard at 14</h3>
-      <p>The board had him 49th, in a draft that is 72 picks long.</p>
-    </div>
-    <div class="card">
-      <div class="meta">BIGGEST STEAL</div>
-      <h3>Creger takes Alvin Kamara at 57</h3>
-      <p>The board had him 16th. Eleven teams passed.</p>
-    </div>
-    <div class="card">
-      <div class="meta">THE OTHER REACHES</div>
-      <h3>Jordan +33, David +32, Creger +26</h3>
-      <p>Malachi Fields went at 20 with the board at 53, Zachariah Branch at 16 with the board at 48, and Chris Bell at 28 with the board at 54.</p>
-    </div>
-    <div class="card">
-      <div class="meta">THE OTHER STEALS</div>
-      <h3>Raj -24, Reynolds -21, Malcolm -21</h3>
-      <p>Eli Stowers went at 48 with the board at 24, Malik Willis at 35 with the board at 14, and Bryce Young at 39 with the board at 18. Quarterbacks keep falling in a one quarterback league.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- ============ SHENANIGANS ============ -->
-<section><div class="wrap">
-  <h2><span class="n">04</span>Shenanigans</h2>
-  <p class="sub">Eighteen of the seventy-two picks had already changed hands. One of them changed
-    hands while the draft was running.</p>
-
-  <div class="trade">
-    <div class="hd"><div class="ttl">Raj traded during his own draft</div><div class="date">AUG 31 · 00:09</div></div>
-    <p class="kick">The draft went live at 00:02:25. Raj opened negotiations at 00:03:09. At
-      00:09:47 he owned the first overall pick, and at pick 1 he took Jeremiyah Love.</p>
-    <div class="swap">
-      <div class="side"><div class="lbl">Brandon gave</div><ul>
-        <li>The 1.01, earned by going 2-12</li><li>Rashee Rice</li></ul></div>
-      <div class="arrow">⇄</div>
-      <div class="side got"><div class="lbl">Brandon got</div><ul>
-        <li>Nico Collins</li><li>Breece Hall</li><li>A 2028 first, a 2027 second, a 2027 third</li></ul></div>
-    </div>
-  </div>
-
-  <div class="trade">
-    <div class="hd"><div class="ttl">Creger sold Kamara, then drafted Kamara</div><div class="date">OCT 2025 TO AUG 2026</div></div>
-    <div class="receipt"><span class="rl">The round trip</span>
-      October 2025: Creger trades <b>Alvin Kamara</b> to David for three 2026 third-round picks.
-      August 2026: David flips Kamara to Luke. Sixteen days later Luke does not keep him.
-      Creger drafts him at <b>pick 57</b>, in the fifth round.</div>
-    <p class="kick">He spent those three thirds in this same draft, at 28, 29 and 31, on Chris
-      Bell, Cyrus Allen and MarShawn Lloyd.</p>
-  </div>
-
-  <div class="cards" style="margin-top:20px">
-    <div class="card">
-      <div class="meta">BUYING WHILE LOSING</div>
-      <h3>Ward drafted eight times</h3>
-      <p>He bought firsts off Raj and Reynolds. He won three games last year and brought both the most picks and the youngest class this year.</p>
-    </div>
-    <div class="card">
-      <div class="meta">FEWEST SWINGS</div>
-      <h3>Jonathan, four picks</h3>
-      <p>He traded his second to David and his third to Creger, then spent one of the four that were left on a kicker.</p>
-    </div>
-  </div>
-</div></section>
-
-<!-- ============ DID YOU LEARN ============ -->
-<section><div class="wrap">
-  <h2><span class="n">05</span>Did you learn anything</h2>
-  <p class="sub">The State of the League page already wrote down how each of you behaves.</p>
-
-  <div class="learn">
-    <div class="lq">Malcolm does not want rookies</div>
-    <div class="then"><span class="yr">Aug 28</span><span class="tx">He traded a 2027 second for Deebo Samuel, age 30, in the fourth trade of his career in four years.</span></div>
-    <div class="now"><span class="yr">Aug 31</span><span class="tx">He drafted one rookie in seven picks, the oldest class in the league at 25.7, on a roster that won five games.</span></div>
-    <div class="verdict no">Verdict: no</div>
-  </div>
-
-  <div class="learn">
-    <div class="lq">Malcolm drafts a quarterback</div>
-    <div class="then"><span class="yr">2025</span><span class="tx">He took Cameron Ward at pick 7, in the first round of a one quarterback league.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">He took Bryce Young at pick 39, in the fourth round of the same league.</span></div>
-    <div class="verdict part">Verdict: partial credit, thirty-two picks cheaper</div>
-  </div>
-
-  <div class="learn">
-    <div class="lq">Ward drafts a quarterback, a defense and a kicker</div>
-    <div class="then"><span class="yr">2024</span><span class="tx">He drafted Daniel Jones, a defense and a kicker.</span></div>
-    <div class="then"><span class="yr">2025</span><span class="tx">He drafted Jaxson Dart and Shedeur Sanders, the Buffalo defense and Will Reichard.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">He drafted Fernando Mendoza, the Denver defense and Cameron Dicker at pick 50.</span></div>
-    <div class="verdict no">Verdict: no, three years running</div>
-  </div>
-
-  <div class="learn">
-    <div class="lq">The 2024 Raj class reunion</div>
-    <div class="then"><span class="yr">2024</span><span class="tx">Raj drafts MarShawn Lloyd,
-      Jaylen Wright, Keaton Mitchell, Tank Bigsby and four others.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">Creger takes Lloyd at 31.
-      Jordan takes Bigsby at 33. Brandon takes Mitchell at 37. Raj takes Jaylen Wright with
-      pick 72.</span></div>
-    <div class="verdict no">Verdict: no, and one of you is a repeat offender</div>
-  </div>
-
-  <div class="learn">
-    <div class="lq">Matt cannot decide about Jalen Milroe</div>
-    <div class="then"><span class="yr">2025</span><span class="tx">Matt drafted him at pick 42 and then let him go.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">Jonathan drafted him at pick
-      43.</span></div>
-    <div class="verdict no">Verdict: no</div>
-  </div>
-
-  <div class="learn">
-    <div class="lq">Reynolds sells picks and keeps winning</div>
-    <div class="then"><span class="yr">2025</span><span class="tx">He sold his capital through 2027, went 12-2 and missed the final.</span></div>
-    <div class="now"><span class="yr">2026</span><span class="tx">He showed up with five picks and posted the best average value in the draft.</span></div>
-    <div class="verdict yes">Verdict: yes, unfortunately</div>
-  </div>
-</div></section>
-
-<!-- ============ TIMELINE ============ -->
-<section><div class="wrap">
-  <h2><span class="n">06</span>The timeline check</h2>
-  <p class="sub">These are the ages of what you added, set against the record you finished with.</p>
-  <div class="tablewrap"><table>
-    <thead><tr><th>Manager</th><th class="num">2025</th><th class="num">Picks</th>
-      <th class="num">Rookies</th><th class="num">Vets</th><th class="num">Avg age</th><th>Verdict</th></tr></thead>
-    <tbody>
-      <tr><td class="who"><b>Ward</b></td><td class="num">3-11</td><td class="num">8</td><td class="num">6</td><td class="num">0</td><td class="num pos">21.8</td><td>Youngest class, worst record. Correct.</td></tr>
-      <tr><td class="who"><b>David</b></td><td class="num">5-9</td><td class="num">6</td><td class="num">5</td><td class="num">0</td><td class="num pos">22.4</td><td>All rookies on a five-win roster. Correct.</td></tr>
-      <tr><td class="who"><b>Raj</b></td><td class="num">9-5</td><td class="num">7</td><td class="num">6</td><td class="num">1</td><td class="num pos">22.6</td><td>Champion drafting like a rebuild.</td></tr>
-      <tr><td class="who"><b>Luke</b></td><td class="num">8-6</td><td class="num">5</td><td class="num">3</td><td class="num">1</td><td class="num">22.5</td><td>Thin, but fine.</td></tr>
-      <tr><td class="who"><b>Brandon</b></td><td class="num">2-12</td><td class="num">5</td><td class="num">2</td><td class="num">2</td><td class="num">23.0</td><td>Two wins does not buy veterans.</td></tr>
-      <tr><td class="who"><b>Matt A.</b></td><td class="num">5-9</td><td class="num">5</td><td class="num">2</td><td class="num">2</td><td class="num">23.5</td><td>Five wins and a 25-year-old back.</td></tr>
-      <tr><td class="who"><b>Reynolds</b></td><td class="num">12-2</td><td class="num">5</td><td class="num">3</td><td class="num">1</td><td class="num">23.5</td><td>Contender. Efficient.</td></tr>
-      <tr><td class="who"><b>Jonathan</b></td><td class="num">8-6</td><td class="num">4</td><td class="num">1</td><td class="num">2</td><td class="num">23.7</td><td>Four picks is not a timeline.</td></tr>
-      <tr><td class="who"><b>Jeremy</b></td><td class="num">6-8</td><td class="num">5</td><td class="num">1</td><td class="num">2</td><td class="num">23.7</td><td>One rookie. Middle of nowhere.</td></tr>
-      <tr><td class="who"><b>Jordan</b></td><td class="num">10-4</td><td class="num">7</td><td class="num">4</td><td class="num">3</td><td class="num">24.4</td><td>Contender adding now. Reasonable.</td></tr>
-      <tr><td class="who"><b>Creger</b></td><td class="num">11-3</td><td class="num">8</td><td class="num">3</td><td class="num">4</td><td class="num">24.7</td><td>Eleven wins buys veterans. Coherent.</td></tr>
-      <tr><td class="who"><b>Malcolm</b></td><td class="num">5-9</td><td class="num">7</td><td class="num">1</td><td class="num">5</td><td class="num neg">25.7</td><td>Oldest class in the league, on a 5-9 team.</td></tr>
-    </tbody>
-  </table></div>
-  <div class="note" style="margin-top:22px">
-    The two youngest classes belong to teams that finished 3-11 and 5-9. So does the oldest.
-  </div>
-</div></section>
-
-<!-- ============ SUPERLATIVES ============ -->
-<section><div class="wrap">
-  <h2><span class="n">07</span>Superlatives</h2>
-  <p class="sub">Nobody asked for these either.</p>
-  <div class="awards">
-    <div class="award"><div class="nm">The Round Trip</div>
-      <div class="win">Creger</div>
-      <p>He sold Alvin Kamara for three thirds, spent the thirds, and then drafted Kamara in the fifth.</p></div>
-    <div class="award"><div class="nm">Working While You Watched</div>
-      <div class="win">Raj</div>
-      <p>He opened trade talks forty-four seconds into the draft and had the first overall pick before the first round was half done.</p></div>
-    <div class="award"><div class="nm">Allergic To Rookies</div>
-      <div class="win">Malcolm</div>
-      <p>He traded a 2027 second for a 30-year-old receiver three days out, then took one rookie in seven picks at a rookie draft.</p></div>
-    <div class="award"><div class="nm">The Shopping List</div>
-      <div class="win">Ward</div>
-      <p>He has taken a quarterback, a defense and a kicker in three straight drafts.</p></div>
-    <div class="award"><div class="nm">Best Argument For Losing</div>
-      <div class="win">Brandon</div>
-      <p>He went 2-12, earned the first overall pick, sold it nine minutes into the draft, and still posted the highest value score of anybody.</p></div>
-    <div class="award"><div class="nm">Perpetual Mediocrity, Defended</div>
-      <div class="win">Matt</div>
-      <p>He traded his first away and watched a quarterback he cut go one pick later than he took him last year.</p></div>
-  </div>
-</div></section>
-
 <!-- ============ PREDICTIONS ============ -->
 <section><div class="wrap">
-  <h2><span class="n">08</span>Predictions, on the record</h2>
-  <p class="sub">These were written in August and get graded in next year's State of the League.</p>
+  <h2><span class="n">04</span>Predictions, on the record</h2>
+  <p class="sub">These get graded in next year's State of the League, the power rankings above included.</p>
   <div class="preds">
     <div class="pred"><b>Jeremiyah Love finishes as a top-twelve back</b> and Brandon has to hear
       about it every week.</div>
@@ -671,16 +483,24 @@ footer a{color:var(--muted)}
     <div class="pred"><b>Jonathan's four picks outproduce somebody's eight</b> and he mentions it
       constantly.</div>
     <div class="pred"><b>Nobody's kicker matters.</b> Ward spent pick 50 on one anyway.</div>
+    <div class="pred"><b>Raj's #3 power rank means less than his two rings do</b> — the roster
+      runs through Jeremiyah Love now, whatever else gets traded away by October.</div>
+    <div class="pred"><b>Jordan finishes higher than #4 by the bye week and lower than it by the
+      final.</b> He always does.</div>
+    <div class="pred"><b>Malcolm's #11 is the highest he has ranked at anything in three years,</b>
+      and it will not survive Week 6.</div>
   </div>
 </div></section>
 
-<!-- ============ CLOSE ============ -->
+<!-- ============ KICKOFF ============ -->
 <section><div class="wrap">
-  <h2><span class="n">09</span>So that happened</h2>
-  <p class="dek" style="max-width:70ch">Seventy-two picks were made, eighteen of them borrowed, and four went to players Raj had already given up on once. The worst team in the league earned the first pick
-    and sold it while the draft was running, to the guy who has won two of the last three.</p>
+  <h2><span class="n">05</span>Kickoff</h2>
+  <p class="dek" style="max-width:70ch">Twelve rosters are set. One power ranking is on record. None
+    of it has been tested against another human being yet, which is the only thing that makes any
+    of this fun.</p>
   <div class="note" style="margin-top:26px">
-    Power rankings and roster breakdowns land before Week 1, so screenshot the predictions you hate while you still can.
+    Weekly power rankings start after Week 1. Screenshot the predictions you hate while they are
+    still just predictions.
   </div>
 </div></section>
 
@@ -688,57 +508,5 @@ footer a{color:var(--muted)}
   <p>August 2026. Hootie Hoo y'all.</p>
 </div></footer>
 
-
-<script>
-(function(){
-  var cells=[].slice.call(document.querySelectorAll('.board td[title]'));
-  if(!cells.length) return;
-  cells.forEach(function(c){ c.setAttribute('data-tip',c.getAttribute('title')); c.removeAttribute('title'); });
-  var tip=document.createElement('div'); tip.className='bt'; tip.setAttribute('role','tooltip');
-  document.body.appendChild(tip);
-  var cur=null;
-  function parse(raw){
-    var mgr='', rest=raw, meta='';
-    var i=raw.indexOf(' \u2014 ');
-    if(i>-1){ mgr=raw.slice(0,i); rest=raw.slice(i+3); }
-    var j=rest.indexOf(', board ');
-    if(j>-1){ meta=rest.slice(j+2); rest=rest.slice(0,j); }
-    return {player:rest, mgr:mgr, meta:meta};
-  }
-  function show(c){
-    if(cur===c) return;
-    cur=c;
-    var d=parse(c.getAttribute('data-tip')||'');
-    tip.textContent='';
-    var p=document.createElement('span'); p.className='p'; p.textContent=d.player; tip.appendChild(p);
-    if(d.mgr){ var m=document.createElement('span'); m.className='m'; m.textContent=d.mgr; tip.appendChild(m); }
-    if(d.meta){ var s=document.createElement('span'); s.className='s'; s.textContent=d.meta; tip.appendChild(s); }
-    tip.classList.add('on');
-  }
-  function hide(){ cur=null; tip.classList.remove('on'); document.querySelectorAll('.board td.lit').forEach(function(x){x.classList.remove('lit');}); }
-  function place(x,y){
-    var r=tip.getBoundingClientRect(), pad=14;
-    var left=x+pad, top=y+pad;
-    if(left+r.width>window.innerWidth-8) left=x-r.width-pad;
-    if(top+r.height>window.innerHeight-8) top=y-r.height-pad;
-    tip.style.left=Math.max(8,left)+'px'; tip.style.top=Math.max(8,top)+'px';
-  }
-  cells.forEach(function(c){
-    var over=function(e){ show(c); place(e.clientX,e.clientY); };
-    c.addEventListener('mouseenter',over);
-    c.addEventListener('mouseover',over);
-    c.addEventListener('mousemove',over);
-    c.addEventListener('mouseleave',hide);
-    c.addEventListener('click',function(e){
-      e.stopPropagation();
-      if(cur===c){ hide(); return; }
-      hide(); c.classList.add('lit'); show(c);
-      var b=c.getBoundingClientRect(); place(b.left+b.width/2, b.bottom-6);
-    });
-  });
-  document.addEventListener('click',hide);
-  window.addEventListener('scroll',hide,{passive:true});
-})();
-</script>
 </body>
 </html>
