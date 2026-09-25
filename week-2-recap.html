@@ -1,148 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" data-palette="#FDBB30">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 2 Recap 2026 - 193 points, seven snaps</title>
-<style>
-:root{
-  --black:#0B1315; --surface:#111B1E; --raised:#17252A; --line:#22343A;
-  --gold:#FDBB30; --gold-deep:#D9971C; --gold-dim:#8A6A1C;
-  --ink:#EDEFEF; --muted:#9FA8AB; --dim:#6E787C; --grey:#C5C6C8;
-  --pos:#7FD1A8; --neg:#E68A7C;
-  --mono:ui-monospace,"SF Mono",SFMono-Regular,Menlo,Consolas,monospace;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0;background:var(--black);color:var(--ink);
-  font-family:var(--sans);font-size:17px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-section{padding:64px 0;border-top:1px solid var(--line)}
-
-/* ---------- nav ---------- */
-.nav{border-bottom:1px solid var(--line);background:rgba(11,19,21,.9);backdrop-filter:blur(8px);
-  position:sticky;top:0;z-index:20}
-.nav .wrap{display:flex;gap:26px;align-items:center;height:52px;overflow-x:auto;scrollbar-width:none}
-.nav .wrap::-webkit-scrollbar{display:none}
-.nav a{font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--dim);text-decoration:none;padding:4px 0;border-bottom:2px solid transparent;
-  white-space:nowrap;flex:none}
-.nav a:hover{color:var(--grey)}
-.nav a.on{color:var(--gold);border-bottom-color:var(--gold)}
-
-/* ---------- hero ---------- */
-.hero{
-  position:relative;overflow:hidden;padding:70px 0 58px;
-  background:
-    radial-gradient(120% 90% at 8% -10%, rgba(253,187,48,.20) 0%, rgba(253,187,48,0) 58%),
-    radial-gradient(90% 70% at 100% 0%, rgba(253,187,48,.09) 0%, rgba(253,187,48,0) 60%),
-    var(--black);
-}
-.hero::after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;
-  background:linear-gradient(90deg,var(--gold) 0%,var(--gold-deep) 42%,rgba(253,187,48,0) 100%);
-}
-.eyebrow{
-  font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--gold);margin:0 0 20px;font-weight:600;
-}
-h1{
-  font-size:clamp(42px,8.6vw,86px);line-height:.94;letter-spacing:-.035em;
-  margin:0 0 22px;font-weight:800;
-}
-h1 .g{color:var(--gold);display:block}
-.dek{font-size:clamp(17px,2.3vw,21px);color:var(--grey);max-width:62ch;margin:0 0 8px;line-height:1.55}
-
-/* ---------- headings ---------- */
-h2{font-size:clamp(29px,4.6vw,44px);letter-spacing:-.03em;line-height:1.06;margin:0 0 10px;font-weight:800}
-h2 .n{font-family:var(--mono);font-size:13px;color:var(--gold);display:block;
-  letter-spacing:.2em;margin-bottom:14px;font-weight:600}
-.sub{color:var(--muted);max-width:70ch;margin:0 0 34px;font-size:16.5px}
-
-/* ---------- power rankings (season) ---------- */
-.pranks{display:grid;gap:10px}
-.prank{background:var(--surface);border:1px solid var(--line);border-radius:12px;
-  padding:18px 22px;display:flex;align-items:flex-start;gap:18px}
-.prank.top{border-color:var(--gold-dim);background:linear-gradient(160deg,rgba(253,187,48,.08),var(--surface) 60%)}
-.prank.bot{border-color:rgba(230,138,124,.28)}
-.prank .pn{font-family:var(--mono);font-size:32px;font-weight:800;color:var(--gold);
-  width:52px;flex:none;text-align:center;line-height:1.1}
-.prank.bot .pn{color:var(--neg)}
-.prank .pb{flex:1;min-width:0}
-.prank .pname{font-size:19px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.prank .prec{font-family:var(--mono);font-size:11.5px;color:var(--dim);letter-spacing:.05em;font-weight:400}
-.prank .plu{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.08em;font-weight:400}
-.prank .pmove{font-family:var(--mono);font-size:11px;letter-spacing:.05em;font-weight:400}
-.prank .pmove.up{color:var(--pos)}
-.prank .pmove.down{color:var(--neg)}
-.prank .pmove.same{color:var(--dim)}
-.prank p{font-size:14.5px;color:var(--grey);margin:6px 0 0;line-height:1.55}
-
-/* ---------- matchup cards ---------- */
-.matchup{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px 26px;margin-bottom:16px}
-.mhd{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin-bottom:16px}
-.mside{min-width:0}
-.mside:last-child{text-align:right}
-.mname{font-size:19px;font-weight:800;letter-spacing:-.01em}
-.mside.win .mname{color:var(--gold)}
-.mscore{font-family:var(--mono);font-size:26px;font-weight:800;color:var(--ink);margin-top:2px}
-.mside.win .mscore{color:var(--gold)}
-.mvs{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.15em;text-align:center}
-.matchup p{font-size:14.5px;color:var(--grey);margin:0 0 10px;line-height:1.6}
-.matchup p:last-child{margin-bottom:0}
-
-/* ---------- inner monologue ---------- */
-.matchup p.inner{border-left:3px solid var(--gold-dim);padding:2px 0 2px 16px;font-style:italic;color:var(--ink)}
-.inner .who{display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--gold);margin-bottom:4px}
-
-/* ---------- game of the week ---------- */
-.gow{border:1px solid var(--gold-dim);background:linear-gradient(160deg,rgba(253,187,48,.10),var(--surface) 55%);
-  border-radius:14px;padding:8px}
-.gow .gowtag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--gold);margin:14px 0 0 22px;font-weight:700;display:block}
-.gow .matchup{border:none;background:none;padding:20px 22px 22px;margin-bottom:0}
-.gow .mname{font-size:23px}
-.gow .mscore{font-size:32px}
-
-/* ---------- predictions check-in ---------- */
-.checks{display:grid;gap:12px}
-.check{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
-.ctag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
-  padding:3px 9px;border-radius:20px;margin-bottom:10px}
-.ctag.right{background:rgba(127,209,168,.15);color:var(--pos)}
-.ctag.wrong{background:rgba(230,138,124,.15);color:var(--neg)}
-.check p{font-size:15px;color:var(--grey);margin:0;line-height:1.6}
-.check p b{color:var(--ink)}
-
-/* ---------- look-ahead ---------- */
-.wk2{display:grid;gap:10px}
-.wk2row{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 20px}
-.wk2row .wmatch{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.wk2row .wteam{font-size:16.5px;font-weight:700}
-.wk2row .wline{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
-.wk2row p{font-size:14px;color:var(--grey);margin:0;line-height:1.55}
-
-.note{background:var(--raised);border:1px dashed var(--line);border-radius:12px;
-  padding:20px 22px;font-size:14.5px;color:var(--muted);line-height:1.6}
-footer{padding:52px 0 70px;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px;line-height:1.7}
-
-@media(max-width:860px){
-  .prank{flex-wrap:wrap}
-  body{font-size:16px}
-  section{padding:50px 0}
-  .nav .wrap{gap:18px}
-}
-@media(max-width:560px){
-  .mhd{grid-template-columns:1fr;text-align:left}
-  .mside:last-child{text-align:left}
-  .mvs{text-align:left;margin:2px 0}
-}
-</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="edition.css">
 </head>
 <body>
 <nav class="nav"><div class="wrap">
@@ -152,294 +17,284 @@ footer{padding:52px 0 70px;border-top:1px solid var(--line);color:var(--dim);fon
   <a href="week-2-recap.html" class="on">Week 2 Recap</a>
 </div></nav>
 
-<!-- ============ HERO ============ -->
-<div class="hero">
-  <div class="wrap">
-    <p class="eyebrow">one 193-point week · one seven-snap Monday · four teams at 2-0</p>
-    <h1>Week 2<br>Recap<span class="g">2026</span></h1>
-    <p class="dek">Jeremy put up 193.02, the highest score of the season so far, against the
+<!-- ============ MASTHEAD ============ -->
+<header class="mast"><div class="wrap">
+  <div class="plate">
+    <div class="ear"><b>Week 2</b>Final scores</div>
+    <p class="name">Some Losers and Raj<i>.</i></p>
+    <div class="ear r"><b>Again?</b>Raj is 2-0</div>
+  </div>
+  <div class="dateline">
+    <span>2026 season · No. 2</span>
+    <span>Thursday, September 24, 2026</span>
+    <span>Week 2 recap</span>
+  </div>
+  <div class="banner">
+    <div><h1>Jeremy hangs 193 on Reynolds</h1>
+    <p class="lede">Jeremy put up 193.02, the highest score of the season so far, against the
       Reynolds team our own look-ahead had beating him by 38.1. Ward went into Monday one decent
       Jaxson Dart game away from his first win, and Dart lasted seven snaps. Jordan spent the week
       building an argument about the Jaxon Smith-Njigba trade, and Smith-Njigba spent Sunday
-      tearing it down.</p>
+      tearing it down.</p></div>
+    <nav class="inside" aria-label="In this edition">
+      <h2>Inside</h2>
+      <a href="#rankings">Season power rankings</a>
+      <a href="#gow">Game of the week</a>
+      <a href="#games">Week 2, game by game</a>
+      <a href="#predictions">Predictions check-in</a>
+      <a href="#ahead">Week 3 look-ahead</a>
+    </nav>
   </div>
-</div>
+</div></header>
 
 <!-- ============ SEASON POWER RANKINGS ============ -->
-<section><div class="wrap">
-  <h2><span class="n">01</span>Season Power Rankings</h2>
-  <p class="sub">Brandon climbed three spots on a 2-0 start. Jonathan fell five
-    at 0-2, and Jeremy scored the most points in the league and still only reached ninth.</p>
-  <div class="pranks">
-    <div class="prank top">
-      <div class="pn">1</div>
-      <div class="pb">
-        <div class="pname">Raj <span class="prec">2-0</span> <span class="plu">317.06 PTS</span> <span class="pmove same">steady at #1</span></div>
-        <p>He's 2-0 with the second-most points in the league, and his roster projects
-          second-best the rest of the way. He has beaten Reynolds and Matt A. by a combined 104.8
-          points.</p>
-      </div>
-    </div>
-    <div class="prank top">
-      <div class="pn">2</div>
-      <div class="pb">
-        <div class="pname">Jordan <span class="prec">2-0</span> <span class="plu">313.38 PTS</span> <span class="pmove up">▲ up 1 from #3</span></div>
-        <p>He has beaten Jeremy and Malcolm by a combined 58.7 points and passed 0-2 Reynolds for
-          second.</p>
-      </div>
-    </div>
-    <div class="prank top">
-      <div class="pn">3</div>
-      <div class="pb">
-        <div class="pname">Reynolds <span class="prec">0-2</span> <span class="plu">228.12 PTS</span> <span class="pmove down">▼ down 1 from #2</span></div>
-        <p>He's 0-2 and still third, because his roster projects better than anybody's the rest of
-          the way, Raj's included.</p>
-      </div>
-    </div>
-    <div class="prank">
-      <div class="pn">4</div>
-      <div class="pb">
-        <div class="pname">Luke <span class="prec">2-0</span> <span class="plu">271.06 PTS</span> <span class="pmove up">▲ up 2 from #6</span></div>
-        <p>He's 2-0, and he's done it quietly. He has won two games by a combined 22.2 points
-          without posting the top score in either week.</p>
-      </div>
-    </div>
-    <div class="prank">
-      <div class="pn">5</div>
-      <div class="pb">
-        <div class="pname">Brandon <span class="prec">2-0</span> <span class="plu">264.02 PTS</span> <span class="pmove up">▲ up 3 from #8</span></div>
-        <p>He's 2-0 and climbed three spots, the biggest rise of the week.
-          He started the preseason ninth in the Dynasty rankings.</p>
-      </div>
-    </div>
-    <div class="prank">
-      <div class="pn">6</div>
-      <div class="pb">
-        <div class="pname">David <span class="prec">1-1</span> <span class="plu">260.80 PTS</span> <span class="pmove up">▲ up 1 from #7</span></div>
-        <p>He got his first win, by twenty-five over Creger, and moved up a spot. His points rank
-          eighth, his rest-of-season projection ranks seventh, and he started the season sixth in
-          the Dynasty rankings.</p>
-      </div>
-    </div>
-    <div class="prank">
-      <div class="pn">7</div>
-      <div class="pb">
-        <div class="pname">Matt A. <span class="prec">1-1</span> <span class="plu">272.34 PTS</span> <span class="pmove down">▼ down 3 from #4</span></div>
-        <p>He posted the league's best score in Week 1 and its worst in Week 2, 173.76 and then
-          98.58. His roster still projects fourth-best,
-          which kept him from falling further.</p>
-      </div>
-    </div>
-    <div class="prank">
-      <div class="pn">8</div>
-      <div class="pb">
-        <div class="pname">Creger <span class="prec">1-1</span> <span class="plu">204.44 PTS</span> <span class="pmove up">▲ up 1 from #9</span></div>
-        <p>He's 1-1 with the second-fewest points in the league, and he moved up a spot.</p>
-      </div>
-    </div>
-    <div class="prank">
-      <div class="pn">9</div>
-      <div class="pb">
-        <div class="pname">Jeremy <span class="prec">1-1</span> <span class="plu">333.88 PTS</span> <span class="pmove up">▲ up 1 from #10</span></div>
-        <p>He leads the league in points by almost seventeen and sits ninth, because the rest of
-          his roster projects second-worst in the league.</p>
-      </div>
-    </div>
-    <div class="prank bot">
-      <div class="pn">10</div>
-      <div class="pb">
-        <div class="pname">Jonathan <span class="prec">0-2</span> <span class="plu">275.78 PTS</span> <span class="pmove down">▼ down 5 from #5</span></div>
-        <p>He's fourth in points and 0-2, and he fell five spots, the biggest drop of the week.</p>
-      </div>
-    </div>
-    <div class="prank bot">
-      <div class="pn">11</div>
-      <div class="pb">
-        <div class="pname">Ward <span class="prec">0-2</span> <span class="plu">201.70 PTS</span> <span class="pmove same">steady at #11</span></div>
-        <p>He has the fewest points in the league, he's 0-2, and his rest-of-season projection
-          ranks tenth.</p>
-      </div>
-    </div>
-    <div class="prank bot">
-      <div class="pn">12</div>
-      <div class="pb">
-        <div class="pname">Malcolm <span class="prec">0-2</span> <span class="plu">232.82 PTS</span> <span class="pmove same">steady at #12</span></div>
-        <p>He's 0-2, he started the season last in the Dynasty rankings, and he holds the league's
-          lowest rest-of-season projection.</p>
-      </div>
-    </div>
+<section id="rankings" class="c-blue"><div class="wrap">
+  <div class="flag">Season power rankings <span>After Week 2</span></div>
+  <p class="deck">Brandon climbed three spots on a 2-0 start. Jonathan fell five at 0-2, and Jeremy
+    scored the most points in the league and still only reached ninth.</p>
+  <div class="ranks">
+    <div class="rk"><div class="n">1</div><div>
+      <h3>Raj</h3>
+      <p class="meta">2-0 · 317.06 pts · <span>steady at #1</span></p>
+      <p>He's 2-0 with the second-most points in the league, and his roster projects
+        second-best the rest of the way. He has beaten Reynolds and Matt A. by a combined 104.8
+        points.</p>
+    </div></div>
+    <div class="rk"><div class="n">2</div><div>
+      <h3>Jordan</h3>
+      <p class="meta">2-0 · 313.38 pts · <span class="up">▲ up 1 from #3</span></p>
+      <p>He has beaten Jeremy and Malcolm by a combined 58.7 points and passed 0-2 Reynolds for
+        second.</p>
+    </div></div>
+    <div class="rk"><div class="n">3</div><div>
+      <h3>Reynolds</h3>
+      <p class="meta">0-2 · 228.12 pts · <span class="down">▼ down 1 from #2</span></p>
+      <p>He's 0-2 and still third, because his roster projects better than anybody's the rest of
+        the way, Raj's included.</p>
+    </div></div>
+    <div class="rk"><div class="n">4</div><div>
+      <h3>Luke</h3>
+      <p class="meta">2-0 · 271.06 pts · <span class="up">▲ up 2 from #6</span></p>
+      <p>He's 2-0, and he's done it quietly. He has won two games by a combined 22.2 points
+        without posting the top score in either week.</p>
+    </div></div>
+    <div class="rk"><div class="n">5</div><div>
+      <h3>Brandon</h3>
+      <p class="meta">2-0 · 264.02 pts · <span class="up">▲ up 3 from #8</span></p>
+      <p>He's 2-0 and climbed three spots, the biggest rise of the week. He started the preseason
+        ninth in the Dynasty rankings.</p>
+    </div></div>
+    <div class="rk"><div class="n">6</div><div>
+      <h3>David</h3>
+      <p class="meta">1-1 · 260.80 pts · <span class="up">▲ up 1 from #7</span></p>
+      <p>He got his first win, by twenty-five over Creger, and moved up a spot. His points rank
+        eighth, his rest-of-season projection ranks seventh, and he started the season sixth in
+        the Dynasty rankings.</p>
+    </div></div>
+    <div class="rk"><div class="n">7</div><div>
+      <h3>Matt A.</h3>
+      <p class="meta">1-1 · 272.34 pts · <span class="down">▼ down 3 from #4</span></p>
+      <p>He posted the league's best score in Week 1 and its worst in Week 2, 173.76 and then
+        98.58. His roster still projects fourth-best, which kept him from falling further.</p>
+    </div></div>
+    <div class="rk"><div class="n">8</div><div>
+      <h3>Creger</h3>
+      <p class="meta">1-1 · 204.44 pts · <span class="up">▲ up 1 from #9</span></p>
+      <p>He's 1-1 with the second-fewest points in the league, and he moved up a spot.</p>
+    </div></div>
+    <div class="rk"><div class="n">9</div><div>
+      <h3>Jeremy</h3>
+      <p class="meta">1-1 · 333.88 pts · <span class="up">▲ up 1 from #10</span></p>
+      <p>He leads the league in points by almost seventeen and sits ninth, because the rest of
+        his roster projects second-worst in the league.</p>
+    </div></div>
+    <div class="rk"><div class="n">10</div><div>
+      <h3>Jonathan</h3>
+      <p class="meta">0-2 · 275.78 pts · <span class="down">▼ down 5 from #5</span></p>
+      <p>He's fourth in points and 0-2, and he fell five spots, the biggest drop of the week.</p>
+    </div></div>
+    <div class="rk"><div class="n">11</div><div>
+      <h3>Ward</h3>
+      <p class="meta">0-2 · 201.70 pts · <span>steady at #11</span></p>
+      <p>He has the fewest points in the league, he's 0-2, and his rest-of-season projection
+        ranks tenth.</p>
+    </div></div>
+    <div class="rk"><div class="n">12</div><div>
+      <h3>Malcolm</h3>
+      <p class="meta">0-2 · 232.82 pts · <span>steady at #12</span></p>
+      <p>He's 0-2, he started the season last in the Dynasty rankings, and he holds the league's
+        lowest rest-of-season projection.</p>
+    </div></div>
   </div>
 </div></section>
 
 <!-- ============ GAME OF THE WEEK ============ -->
-<section><div class="wrap">
-  <h2><span class="n">02</span>Game of the week</h2>
-  <p class="sub">Ward's plan for 2026 is to be competitive and lose, and Week 2 came down to his
+<section class="lead c-red" id="gow"><div class="wrap">
+  <div class="flag">Game of the week</div>
+  <p class="deck">Ward's plan for 2026 is to be competitive and lose, and Week 2 came down to his
     last player on Monday.</p>
-  <div class="gow">
-    <span class="gowtag">Game of the week</span>
-    <div class="matchup">
-      <div class="mhd">
-        <div class="mside win"><div class="mname">Brandon</div><div class="mscore">123.88</div></div>
-        <div class="mvs">DEF.</div>
-        <div class="mside"><div class="mname">Ward</div><div class="mscore">108.60</div></div>
-      </div>
-      <p>Brandon built his lead on Dalton Kincaid's 22.5 on Thursday and a Vikings defense that
-        scored 19.0 against a projection of 6.3. Ward went into Monday down 13.08 with Jaxson Dart
-        still to play. Dart was projected for 20.2 and Brandon's last starter, kicker Harrison
-        Mevis, for 8.6, which put the projected final at 129.4 to 128.0. Ward was a 1.4-point underdog
-        with one player left.</p>
-      <p>Dart played seven snaps. He completed three of five passes for twenty yards, left with a
-        knee injury, and is now on injured reserve after meniscus surgery. His 0.8 points settled
-        it, and the final landed at 123.88 to 108.60.</p>
-      <p>Brock Purdy scored 32.48 on Ward's bench on Sunday, and starting him would have won the
-        game by sixteen. Dart outscored Purdy in Week 1, 32.6 to 27.1, so the call made sense when
-        Ward made it. Ward has now gone into Monday with a chance to win in both weeks of the
-        season, and he has lost both, by a combined 17.84 points.</p>
-    </div>
+  <div class="shade">
+  <div class="box">
+    <div class="row w"><span class="t">Brandon</span><span class="s">123.88</span></div>
+    <div class="row"><span class="t">Ward</span><span class="s">108.60</span></div>
+  </div>
+  <div class="body">
+    <p>Brandon built his lead on Dalton Kincaid's 22.5 on Thursday and a Vikings defense that
+      scored 19.0 against a projection of 6.3. Ward went into Monday down 13.08 with Jaxson Dart
+      still to play. Dart was projected for 20.2 and Brandon's last starter, kicker Harrison
+      Mevis, for 8.6, which put the projected final at 129.4 to 128.0. Ward was a 1.4-point
+      underdog with one player left.</p>
+    <p>Dart played seven snaps. He completed three of five passes for twenty yards, left with a
+      knee injury, and is now on injured reserve after meniscus surgery. His 0.8 points settled
+      it, and the final landed at 123.88 to 108.60.</p>
+    <p>Brock Purdy scored 32.48 on Ward's bench on Sunday, and starting him would have won the
+      game by sixteen. Dart outscored Purdy in Week 1, 32.6 to 27.1, so the call made sense when
+      Ward made it. Ward has now gone into Monday with a chance to win in both weeks of the
+      season, and he has lost both, by a combined 17.84 points.</p>
+  </div>
   </div>
 </div></section>
 
 <!-- ============ WEEK 2, GAME BY GAME ============ -->
-<section><div class="wrap">
-  <h2><span class="n">03</span>Week 2, game by game</h2>
-  <p class="sub">Five more games happened, and none of them was closer than nineteen points.</p>
+<section id="games" class="c-green"><div class="wrap">
+  <div class="flag">Week 2, game by game</div>
+  <p class="deck">Five more games happened, and none of them was closer than nineteen points.</p>
+  <div class="stories">
 
-  <div class="matchup">
-    <div class="mhd">
-      <div class="mside win"><div class="mname">Jeremy</div><div class="mscore">193.02</div></div>
-      <div class="mvs">DEF.</div>
-      <div class="mside"><div class="mname">Reynolds</div><div class="mscore">114.40</div></div>
+    <div class="story">
+      <div class="box">
+        <div class="row w"><span class="t">Jeremy</span><span class="s">193.02</span></div>
+        <div class="row"><span class="t">Reynolds</span><span class="s">114.40</span></div>
+      </div>
+      <p>Josh Allen threw for 248 yards and three touchdowns on Thursday and ran for 69 yards and
+        two more, good for 46.82 points. Jeremy led 46.82 to 12.30 after Thursday, and by the end
+        of Sunday the lead was thirty.</p>
+      <p>Davante Adams caught eight passes for 195 yards and two touchdowns on Monday, 39.5 points
+        added to a game that was already over, and it pushed Jeremy past Matt A.'s Week 1 mark of
+        173.76.</p>
+      <p>Reynolds got 15.2 points combined from Bijan Robinson, Saquon Barkley and Malik Nabers,
+        against a combined projection of 52.7. He did start Jaylen Waddle over Christian Watson
+        again, and this time it was the right call, 21.8 to 14.1.</p>
     </div>
-    <p>Josh Allen threw for 248 yards and three touchdowns on Thursday and ran for 69 yards and two
-      more, good for 46.82 points. Jeremy led 46.82 to 12.30 after Thursday, and by the end of
-      Sunday the lead was thirty.</p>
-    <p>Davante Adams caught eight passes for 195 yards and two touchdowns on Monday, 39.5 points
-      added to a game that was already over, and it pushed Jeremy past Matt A.'s Week 1 mark of
-      173.76.</p>
-    <p>Reynolds got 15.2 points combined from Bijan Robinson, Saquon Barkley and Malik Nabers,
-      against a combined projection of 52.7. He did start Jaylen Waddle over Christian Watson
-      again, and this time it was the right call, 21.8 to 14.1.</p>
-  </div>
 
-  <div class="matchup">
-    <div class="mhd">
-      <div class="mside win"><div class="mname">Jordan</div><div class="mscore">155.26</div></div>
-      <div class="mvs">DEF.</div>
-      <div class="mside"><div class="mname">Malcolm</div><div class="mscore">113.78</div></div>
+    <div class="story">
+      <div class="box">
+        <div class="row w"><span class="t">Jordan</span><span class="s">155.26</span></div>
+        <div class="row"><span class="t">Malcolm</span><span class="s">113.78</span></div>
+      </div>
+      <div class="pull"><span class="who">Jordan, after Week 1</span><q>Coker had 33.8.
+        Smith-Njigba had 26.2. Value moved both ways, the box score proves it, and nobody can call
+        that a gift between brothers anymore.</q></div>
+      <p>Then Jaxon Smith-Njigba caught nine passes for 155 yards and three touchdowns, good for
+        42.5 points in a game Jordan won by forty-one. Jalen Coker scored 14.6. After two weeks,
+        Smith-Njigba leads 68.7 to 48.4.</p>
+      <div class="pull"><span class="who">Jordan, after Week 2</span><q>Two weeks is a small
+        sample.</q></div>
     </div>
-    <p class="inner"><span class="who">Jordan, after Week 1</span>Coker had 33.8. Smith-Njigba had
-      26.2. Value moved both ways, the box score proves it, and nobody can call that a gift between
-      brothers anymore.</p>
-    <p>Then Jaxon Smith-Njigba caught nine passes for 155 yards and three touchdowns, good for
-      42.5 points in a game Jordan won by forty-one. Jalen Coker scored 14.6. After two weeks,
-      Smith-Njigba leads 68.7 to 48.4.</p>
-    <p class="inner"><span class="who">Jordan, after Week 2</span>Two weeks is a small sample.</p>
-  </div>
 
-  <div class="matchup">
-    <div class="mhd">
-      <div class="mside win"><div class="mname">Raj</div><div class="mscore">153.10</div></div>
-      <div class="mvs">DEF.</div>
-      <div class="mside"><div class="mname">Matt A.</div><div class="mscore">98.58</div></div>
+    <div class="story">
+      <div class="box">
+        <div class="row w"><span class="t">Raj</span><span class="s">153.10</span></div>
+        <div class="row"><span class="t">Matt A.</span><span class="s">98.58</span></div>
+      </div>
+      <p>CeeDee Lamb scored 35.3 for Matt A., more than a third of the team's total, and his other
+        nine starters combined for 63.28. Jonathan Taylor led Raj with 29.2.</p>
+      <p>Matt A. started Justin Herbert, who scored 9.88, and left C.J. Stroud's 17.02 on the bench.
+        Stroud came over in an August trade with Luke, the one that brought Ladd McConkey along with
+        him and sent Dak Prescott, DK Metcalf and the fifth overall pick the other way. Prescott
+        scored 37.76 for Luke this week.</p>
     </div>
-    <p>CeeDee Lamb scored 35.3 for Matt A., more than a third of the team's total, and his other
-      nine starters combined for 63.28. Jonathan Taylor led Raj with 29.2.</p>
-    <p>Matt A. started Justin Herbert, who scored 9.88, and left C.J. Stroud's 17.02 on the bench.
-      Stroud came over in an August trade with Luke, the one that brought Ladd McConkey along with
-      him and sent Dak Prescott, DK Metcalf and the fifth overall pick the other way. Prescott
-      scored 37.76 for Luke this week.</p>
-  </div>
 
-  <div class="matchup">
-    <div class="mhd">
-      <div class="mside win"><div class="mname">David</div><div class="mscore">134.04</div></div>
-      <div class="mvs">DEF.</div>
-      <div class="mside"><div class="mname">Creger</div><div class="mscore">108.78</div></div>
+    <div class="story">
+      <div class="box">
+        <div class="row w"><span class="t">David</span><span class="s">134.04</span></div>
+        <div class="row"><span class="t">Creger</span><span class="s">108.78</span></div>
+      </div>
+      <p>Colston Loveland played 64 snaps and caught one pass for three yards, good for 1.3
+        points, which is also his total for the season. Dallas Goedert, on Creger's bench again,
+        scored 1.4.</p>
+      <p>Creger's kicker and defense combined for 38.0, with 16.0 from Brandon Aubrey and 22.0 from
+        the Patriots, and he still lost by twenty-five. Stefon Diggs scored 21.7 for David, and
+        James Cook added 20.9 on Thursday.</p>
     </div>
-    <p>Colston Loveland played 64 snaps and caught one pass for three yards, good for 1.3
-      points, which is also his total for the season. Dallas Goedert, on Creger's bench again,
-      scored 1.4.</p>
-    <p>Creger's kicker and defense combined for 38.0, with 16.0 from Brandon Aubrey and 22.0 from
-      the Patriots, and he still lost by twenty-five. Stefon Diggs scored 21.7 for David, and
-      James Cook added 20.9 on Thursday.</p>
-  </div>
 
-  <div class="matchup">
-    <div class="mhd">
-      <div class="mside win"><div class="mname">Luke</div><div class="mscore">141.16</div></div>
-      <div class="mvs">DEF.</div>
-      <div class="mside"><div class="mname">Jonathan</div><div class="mscore">122.12</div></div>
+    <div class="story">
+      <div class="box">
+        <div class="row w"><span class="t">Luke</span><span class="s">141.16</span></div>
+        <div class="row"><span class="t">Jonathan</span><span class="s">122.12</span></div>
+      </div>
+      <p>Amon-Ra St. Brown scored 35.2 on Thursday, twice his projection, and Derrick Henry added
+        17.7 for Luke.</p>
+      <p>Jonathan's lineup scored 122.12 out of a possible 122.92 on his roster. Caleb Williams
+        scored 7.72 against a projection of 21.5, a week after putting up 41.3, and Jonathan lost
+        by nineteen.</p>
     </div>
-    <p>Amon-Ra St. Brown scored 35.2 on Thursday, twice his projection, and Derrick Henry added
-      17.7 for Luke.</p>
-    <p>Jonathan's lineup scored 122.12 out of a possible 122.92 on his roster. Caleb Williams
-      scored 7.72 against a projection of 21.5, a week after putting up 41.3, and Jonathan lost
-      by nineteen.</p>
+
   </div>
 </div></section>
 
 <!-- ============ PREDICTIONS CHECK-IN ============ -->
-<section><div class="wrap">
-  <h2><span class="n">04</span>Predictions check-in</h2>
-  <p class="sub">Four of the League Preview's predictions moved this week, two in the right
+<section id="predictions" class="c-gold"><div class="wrap">
+  <div class="flag">Predictions check-in <span>From the League Preview</span></div>
+  <p class="deck">Four of the League Preview's predictions moved this week, two in the right
     direction and two in the wrong one.</p>
-  <div class="checks">
-    <div class="check">
-      <span class="ctag right">Halfway there</span>
-      <p><b>Two of the four re-drafted 2024 Raj players are dropped again before Week 10.</b>
-        Matt A. cut Jaylen Wright on September 18, the second time Wright has been dropped since
+  <div class="ledger">
+    <div class="lg"><div class="mk">✓</div><div>
+      <p class="v">Halfway there</p>
+      <h3>Two of the four re-drafted 2024 Raj players are dropped again before Week 10.</h3>
+      <p>Matt A. cut Jaylen Wright on September 18, the second time Wright has been dropped since
         Raj took him with the draft's final pick. Raj dropped him the same night he drafted him.
         One more of MarShawn Lloyd, Tank Bigsby and Keaton Mitchell has to go before Week 10.</p>
-    </div>
-    <div class="check">
-      <span class="ctag wrong">Wrong</span>
-      <p><b>Nobody's kicker matters. Ward spent pick 50 on one anyway.</b> Ward cut Cameron Dicker
-        this week after two games and three points. Dicker scored 2.0 against a 7.1 projection in
-        Week 1, a game Ward lost by 2.56.</p>
-    </div>
-    <div class="check">
-      <span class="ctag right">Trending right</span>
-      <p><b>Jonathan's four picks outproduce somebody's eight.</b> Jonathan's four draft picks have
-        scored 65.7 points in two weeks, and 20.5 of them came from Denzel Boston in Week 2.
-        Ward's eight have scored 38.0.</p>
-    </div>
-    <div class="check">
-      <span class="ctag wrong">Getting worse</span>
-      <p><b>Jahmyr Gibbs outscores every quarterback in the league this season.</b> Gibbs has 56.9
-        points through two weeks. Five quarterbacks have more, led by Josh Allen at 86.5.</p>
-    </div>
+    </div></div>
+    <div class="lg"><div class="mk x">✗</div><div>
+      <p class="v">Wrong</p>
+      <h3>Nobody's kicker matters. Ward spent pick 50 on one anyway.</h3>
+      <p>Ward cut Cameron Dicker this week after two games and three points. Dicker scored 2.0
+        against a 7.1 projection in Week 1, a game Ward lost by 2.56.</p>
+    </div></div>
+    <div class="lg"><div class="mk">✓</div><div>
+      <p class="v">Trending right</p>
+      <h3>Jonathan's four picks outproduce somebody's eight.</h3>
+      <p>Jonathan's four draft picks have scored 65.7 points in two weeks, and 20.5 of them came
+        from Denzel Boston in Week 2. Ward's eight have scored 38.0.</p>
+    </div></div>
+    <div class="lg"><div class="mk x">✗</div><div>
+      <p class="v">Getting worse</p>
+      <h3>Jahmyr Gibbs outscores every quarterback in the league this season.</h3>
+      <p>Gibbs has 56.9 points through two weeks. Five quarterbacks have more, led by Josh Allen at
+        86.5.</p>
+    </div></div>
   </div>
 </div></section>
 
 <!-- ============ WEEK 3 LOOK-AHEAD ============ -->
-<section><div class="wrap">
-  <h2><span class="n">05</span>Week 3 look-ahead</h2>
-  <p class="sub">Last week's lines went four for six. This week's closest one is half a point.</p>
-  <div class="wk2">
-    <div class="wk2row">
-      <div class="wmatch"><span class="wteam">Jordan vs. Reynolds</span><span class="wline">Reynolds by 6.2</span></div>
+<section id="ahead"><div class="wrap">
+  <div class="flag">Week 3 look-ahead <span>Projected lines</span></div>
+  <p class="deck">Last week's lines went four for six. This week's closest one is half a point.</p>
+  <div class="lines">
+    <div class="ln">
+      <div class="l"><span>Jordan vs. Reynolds</span><span class="dots"></span><span class="fav">Reynolds by 6.2</span></div>
       <p>The #2 and #3 teams in the Season Power Rankings meet, and 0-2 Reynolds is still the
         projected favorite.</p>
     </div>
-    <div class="wk2row">
-      <div class="wmatch"><span class="wteam">Malcolm vs. Ward</span><span class="wline">Malcolm by 4.9</span></div>
+    <div class="ln">
+      <div class="l"><span>Malcolm vs. Ward</span><span class="dots"></span><span class="fav">Malcolm by 4.9</span></div>
       <p>Ward starts Brock Purdy now, and Malcolm is still the projected favorite.</p>
     </div>
-    <div class="wk2row">
-      <div class="wmatch"><span class="wteam">Jeremy vs. Matt A.</span><span class="wline">Matt A. by 6.7</span></div>
+    <div class="ln">
+      <div class="l"><span>Jeremy vs. Matt A.</span><span class="dots"></span><span class="fav">Matt A. by 6.7</span></div>
       <p>Jeremy just scored 193, and the projections have him as an underdog again.</p>
     </div>
-    <div class="wk2row">
-      <div class="wmatch"><span class="wteam">David vs. Brandon</span><span class="wline">David by 1.3</span></div>
+    <div class="ln">
+      <div class="l"><span>David vs. Brandon</span><span class="dots"></span><span class="fav">David by 1.3</span></div>
       <p>Brandon is 2-0 and a projected underdog to a team he's ranked just ahead of.</p>
     </div>
-    <div class="wk2row">
-      <div class="wmatch"><span class="wteam">Raj vs. Luke</span><span class="wline">Raj by 19.2</span></div>
+    <div class="ln">
+      <div class="l"><span>Raj vs. Luke</span><span class="dots"></span><span class="fav">Raj by 19.2</span></div>
       <p>Two 2-0 teams meet, and it's the biggest projected margin of the week.</p>
     </div>
-    <div class="wk2row">
-      <div class="wmatch"><span class="wteam">Jonathan vs. Creger</span><span class="wline">Creger by 0.5</span></div>
+    <div class="ln">
+      <div class="l"><span>Jonathan vs. Creger</span><span class="dots"></span><span class="fav">Creger by 0.5</span></div>
       <p>Caleb Williams is doubtful with a hamstring strain, so Jonathan's projection runs through
         Deshaun Watson, whom he picked up on waivers Wednesday.</p>
     </div>
@@ -448,12 +303,10 @@ footer{padding:52px 0 70px;border-top:1px solid var(--line);color:var(--dim);fon
 
 <!-- ============ ONWARD ============ -->
 <section><div class="wrap">
-  <h2><span class="n">06</span>Onward</h2>
-  <p class="dek" style="max-width:70ch">Two weeks are in the books. Four teams are 2-0, four are
-    0-2, and the team with the most points in the league is 1-1 and ranked ninth.</p>
-  <div class="note" style="margin-top:26px">
-    Week 3 recap lands after Monday Night, with another predictions check-in.
-  </div>
+  <div class="flag">Onward</div>
+  <p class="close">Two weeks are in the books. Four teams are 2-0, four are 0-2, and the team with
+    the most points in the league is 1-1 and ranked ninth.</p>
+  <p class="next">Week 3 recap lands after Monday Night, with another predictions check-in.</p>
 </div></section>
 
 <footer><div class="wrap">
@@ -461,7 +314,7 @@ footer{padding:52px 0 70px;border-top:1px solid var(--line);color:var(--dim);fon
 </div></footer>
 
 <script>
-try{var on=document.querySelector('.nav a.on');on.parentNode.scrollLeft=on.offsetLeft-22}catch(e){}
+try{var on=document.querySelector('.nav a.on');on.parentNode.scrollLeft=on.offsetLeft-24}catch(e){}
 </script>
 </body>
 </html>
