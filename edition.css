@@ -273,10 +273,28 @@ td.rings.zero{color:var(--ink-3);letter-spacing:0}
 .score .lbl{font-family:var(--cond);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-right:12px}
 .riv p{font-size:16.5px;line-height:1.55;color:var(--ink-2)}
 
+/* ---------- guest essay (opinion) ---------- */
+.oped article{border-bottom:1px solid var(--ink);padding-bottom:30px}
+.oped .kicker{font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--red);margin:6px 0 10px}
+.oped h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.6vw,54px);line-height:1.05;
+  letter-spacing:-.015em;margin:0 0 14px;max-width:22ch}
+.oped .dek{font-style:italic;font-size:clamp(19px,2.1vw,22px);line-height:1.45;color:var(--ink-2);max-width:56ch;margin:0 0 18px}
+.oped .by{font-family:var(--cond);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:8px 0;margin:0 0 24px}
+.oped .essay{columns:2;column-gap:44px;column-rule:1px solid var(--hair)}
+.oped .essay p{font-size:18px;line-height:1.6;color:var(--ink)}
+.oped .essay p:first-child::first-letter{float:left;font-family:var(--serif);font-weight:700;
+  font-size:66px;line-height:.82;padding:6px 8px 0 0}
+.oped .disc{font-style:italic;font-size:14.5px;line-height:1.5;color:var(--ink-3);border-top:1px solid var(--hair);
+  padding-top:12px;margin:24px 0 0;max-width:78ch}
+.fn{font-style:italic;font-size:14.5px;line-height:1.5;color:var(--ink-3);border-top:1px solid var(--hair);
+  padding-top:12px;margin:10px 0 0;max-width:78ch}
+
 /* ---------- responsive ---------- */
 @media(max-width:860px){
   .ranks,.pranks,.stories,.ledger,.checks,.preds,.lines,.wk2,.teams,.grades,.cards,.awards,.rivs,
-  .lead .body,.gow .matchup{columns:1}
+  .lead .body,.gow .matchup,.oped .essay{columns:1}
   .champs{grid-template-columns:1fr}
   .kpis{grid-template-columns:repeat(2,1fr)}
   .kpi:nth-child(3){border-left:none;padding-left:0}
