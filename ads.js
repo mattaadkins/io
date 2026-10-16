@@ -16,6 +16,8 @@
   }
   setTimeout(function(){
     ad.hidden=false;
+    var v=ad.querySelector('video');
+    if(v){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}
     setTimeout(tame,10000);
   },1500);
   document.addEventListener('pointermove',function(e){
