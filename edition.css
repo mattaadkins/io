@@ -334,7 +334,7 @@ td.rings.zero{color:var(--ink-3);letter-spacing:0}
 .ad-x:active{border-color:#404040 #fff #fff #404040}
 .ad-body{display:flex;gap:10px;align-items:center;background:#ff0;margin:4px;padding:8px;
   border:3px dashed #f00;color:#000;text-decoration:none}
-.ad-body img{width:120px;height:auto;flex:none;border:2px solid #000}
+.ad-body img,.ad-body video{display:block;width:120px;height:auto;flex:none;border:2px solid #000;pointer-events:none}
 .ad-copy{display:flex;flex-direction:column;gap:5px;font-size:13px;line-height:1.25}
 .ad-copy b{color:#f00;font-size:17px;line-height:1.1;animation:ad-blink 1s steps(1) infinite}
 .ad-copy i{color:#00f;font-style:normal;text-decoration:underline;font-weight:700}
@@ -346,7 +346,7 @@ td.rings.zero{color:var(--ink-3);letter-spacing:0}
   .ad-pop{width:262px;bottom:10px}
   @keyframes ad-slide{from{left:6px}to{left:calc(100% - 262px - 6px)}}
   .ad-body{gap:8px;padding:6px}
-  .ad-body img{width:84px}
+  .ad-body img,.ad-body video{width:84px}
   .ad-copy{font-size:12px}
   .ad-copy b{font-size:15px}
 }
